@@ -51,20 +51,19 @@ echo "<?xml version=\"1.0\" encoding=\"utf-8\" ?>";
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
           <span class="icon-bar"></span>
         </button>
-	<a class="navbar-brand" href="index.php?view=accueil">TinyMVC</a>
+	<!--a class="navbar-brand" href="index.php?view=accueil">TinyMVC</a-->
       </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-         	<!-- <li class="active"><a href="index.php?view=accueil">Accueil</a></li> -->
 		<?=mkHeadLink("Accueil","accueil",$view)?>
 		<?php
-		// Si l'utilisateur n'est pas connecte, on affiche un lien de connexion 
-		if (!valider("connecte","SESSION"))
-			echo mkHeadLink("Se connecter","login",$view); 
-			//echo "<li><a href=\"index.php?view=login\">Se connecter</a></li>";
+			if (!valider("connecte","SESSION")){
+				echo mkHeadLink("Se connecter","signin",$view,"navbarDroite");
+				echo mkHeadLink("S'inscrire","signup",$view,"navbarDroite");
+			}
 		?>
         </ul>
-      </div><!--/.nav-collapse -->
+      </div>
     </div>
   </div>
   

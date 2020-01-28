@@ -8,12 +8,8 @@ La vue à afficher dans la page index est définie par le paramètre "view" qui 
 
 Les formulaires de toutes les vues générées enverront leurs données vers la page data.php pour traitement. La page data.php redirigera alors vers la page index pour réafficher la vue pertinente, généralement la vue dans laquelle se trouvait le formulaire. 
 */
-
-
 	include_once "libs/maLibUtils.php";
 	include_once "libs/maLibBootstrap.php";
-
-
 
 	// on récupère le paramètre view éventuel 
 	$view = valider("view"); 
@@ -43,20 +39,13 @@ Les formulaires de toutes les vues générées enverront leurs données vers la 
 			include("templates/accueil.php");
 		break;
 
-
 		default : // si le template correspondant à l'argument existe, on l'affiche
 			if (file_exists("templates/$view.php"))
 				include("templates/$view.php");
-
 	}
-
-
 	// Dans tous les cas, on affiche le pied de page
 	// Qui contient les coordonnées de la personne si elle est connectée
 	include("templates/footer.php");
-
-
-	
 ?>
 
 
