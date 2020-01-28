@@ -4,8 +4,8 @@ Projet Informatique LE2 !
 # TUTO GITHUB
 _______________________________________________________________
 # Première utilisation
-> Installation du dossier de GitHub dans le répertoire courant
-git clone https://github.com/LDebove/PINF.git
+- Installation du dossier de GitHub dans le répertoire courant
+* git clone https://github.com/LDebove/PINF.git
 
 # Après avoir cloné les fichier/dossiers
 > après avoir modifié un fichier
