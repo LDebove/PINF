@@ -14,7 +14,7 @@ cd cheminAModifier/PINF
 git commit -a -m "message résumant ce que vous avez fait"
 ###### après avoir créé un dossier/fichier dans le dossier principal (PINF)
 git add .
-###### envoyer les modification sur GitHub
+###### envoyer les modification sur GitHub (VOIR EN BAS SI ERREUR)
 git push origin master
 
 ## Utile
@@ -23,9 +23,13 @@ git log
 ###### afficher le status
 git status
 
-
-
-
+## Si vous avez une erreur
+###### enregistrer votre travail
+git commit -a -m "message résumant ce que vous avez fait"
+###### synchroniser votre travail
+git pull
+###### envoyer les modification sur GitHub
+git push origin master
 
 
 
