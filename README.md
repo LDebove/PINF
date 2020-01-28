@@ -8,6 +8,8 @@ _______________________________________________________________
 git clone https://github.com/LDebove/PINF.git
 
 ## Après avoir cloné les fichier/dossiers
+###### se placer dans le bon dossier
+cd cheminAModifier/PINF
 ###### après avoir modifié un fichier
 git commit -a -m "message résumant ce que vous avez fait"
 ###### après avoir créé un dossier/fichier dans le dossier principal (PINF)
