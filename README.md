@@ -17,6 +17,10 @@ git add .
 ###### envoyer les modification sur GitHub (VOIR EN BAS SI ERREUR)
 git push origin master
 
+### Quand vous voulez synchroniser vos fichiers avec ceux de GitHub
+###### Pour synchroniser vos fichiers avec le dossier de GitHub
+git  pull
+
 ### Utile
 ###### afficher les log
 git log
