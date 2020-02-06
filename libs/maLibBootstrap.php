@@ -12,9 +12,10 @@ function mkHeadLink($label,$view,$currentView="",$class="")
 
 	// EX: <?=mkHeadLink("Accueil","accueil",$view)
 	// produit <li class="active"><a href="index.php?view=accueil">Accueil</a></li> si $view= accueil
-
-	if ($view == $currentView) 
+	
+	if($view == $currentView) 
 		$class .= " active";
+		echo "<script>console.log('class: " . $class . "' );</script>";
 	return "<li class=\"$class\"> <a href=\"index.php?view=$view\">$label</a></li>";
 }
 

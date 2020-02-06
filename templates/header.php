@@ -17,7 +17,7 @@ echo "<?xml version=\"1.0\" encoding=\"utf-8\" ?>";
 <head>	
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>TinyMVC ...</title>
-	<!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 
 	<!-- Liaisons aux fichiers css de Bootstrap -->
 	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
@@ -30,8 +30,6 @@ echo "<?xml version=\"1.0\" encoding=\"utf-8\" ?>";
 
 	<script src="js/jquery.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
-	
-
 </head>
 <!-- **** F I N **** H E A D **** -->
 
@@ -57,9 +55,12 @@ echo "<?xml version=\"1.0\" encoding=\"utf-8\" ?>";
         <ul class="nav navbar-nav">
 		<?=mkHeadLink("Accueil","accueil",$view)?>
 		<?php
-			if (!valider("connecte","SESSION")){
+			if(!valider("connecte","SESSION")){
 				echo mkHeadLink("Se connecter","signin",$view,"navbarDroite");
 				echo mkHeadLink("S'inscrire","signup",$view,"navbarDroite");
+			}
+			else{
+				echo mkHeadLink("Se déconnecter","signin",$view);
 			}
 		?>
         </ul>
