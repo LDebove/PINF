@@ -34,27 +34,3 @@ git commit -a -m "message résumant ce que vous avez fait"
 git pull
 ###### envoyer les modification sur GitHub
 git push origin master
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
