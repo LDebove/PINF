@@ -31,8 +31,10 @@ CREATE TABLE `users` (
   `pseudo` varchar(20) CHARACTER SET latin1 NOT NULL COMMENT 'pseudo',
   `passe` varchar(20) CHARACTER SET latin1 NOT NULL COMMENT 'mot de passe',
   `admin` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'indique si l''utilisateur est un administrateur',
-  `couleur` varchar(10) CHARACTER SET latin1 NOT NULL DEFAULT 'black' COMMENT 'indique la couleur préférée de l''utilisateur, en anglais',
-  `blacklist` int(11) DEFAULT '0'
+  `nom` varchar(20) CHARACTER SET latin1 NOT NULL COMMENT 'nom',
+  `prenom` varchar(20) CHARACTER SET latin1 NOT NULL COMMENT 'prenom',
+  `mail` varchar(60) CHARACTER SET latin1 NOT NULL COMMENT 'mail',
+  `blacklist` tinyint(1) DEFAULT '0' COMMENT 'prenom'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
