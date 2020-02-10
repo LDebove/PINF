@@ -1,4 +1,4 @@
-DROP DATABASE pinf if exist;
+DROP DATABASE IF EXISTS pinf;
 CREATE DATABASE pinf;
 
 -- phpMyAdmin SQL Dump
