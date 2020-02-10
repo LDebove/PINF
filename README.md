@@ -21,6 +21,16 @@ git push origin master
 ###### Pour synchroniser vos fichiers avec le dossier de GitHub
 git  pull
 
+### Gestion des branches
+###### Créer une nouvelle branche
+git branch nomBranche
+###### Créer une nouvelle branche et s'y positionner
+git checkout -b nomBranche
+###### Se placer dans une branche déjà existante du répertoire
+git checkout nomBranche
+###### Fusionner deux branches (B -> A) (A = A + B) (en s'étant placé dans la brancheA)
+git merge brancheB
+
 ### Utile
 ###### afficher les log
 git log
