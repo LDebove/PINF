@@ -1,3 +1,6 @@
+DROP DATABASE pinf if exist;
+CREATE DATABASE pinf;
+
 -- phpMyAdmin SQL Dump
 -- version 4.6.6deb5
 -- https://www.phpmyadmin.net/
@@ -17,7 +20,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `rat2019`
+-- Base de données :  `pinf`
 --
 
 -- --------------------------------------------------------
@@ -41,9 +44,9 @@ CREATE TABLE `users` (
 -- Contenu de la table `users`
 --
 
-INSERT INTO `users` (`id`, `pseudo`, `passe`, `admin`, `couleur`, `blacklist`) VALUES
-(3, 'tom', 'ig2i', 0, 'orange', 0),
-(6, 'admin', 'admin', 1, 'black', 0);
+INSERT INTO `users` (`id`, `pseudo`, `passe`, `admin`, `nom`, `prenom`, `mail`, `blacklist`) VALUES
+(1, 'Pierre', 'PDSM', 0, 'de Saint-Meleuc', 'Pierre', 'pinf.hyperion.hotmail.com', 0),
+(2, 'admin', 'admin', 1, 'admin', 'admin', 'pinf.hyperion.hotmail.com', 0);
 
 --
 -- Index pour les tables exportées
