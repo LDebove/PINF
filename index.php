@@ -2,6 +2,7 @@
 session_start();
 
 include_once "libs/maLibUtils.php";
+include_once "libs/maLibBootstrap.php";
 
 $view = valider("view"); 
 

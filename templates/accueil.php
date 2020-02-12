@@ -8,28 +8,34 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
 
 <div class="page-content">
 	<div>
+		<div class="googlemap">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2524.906895835793!2d3.1833937159793586!3d50.74021567951635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c32f6a98b57b51%3A0xa13f60d05918dbb0!2s26%20All%C3%A9e%20Louise%20Thuliez%2C%2059200%20Tourcoing!5e0!3m2!1sfr!2sfr!4v1581347399804!5m2!1sfr!2sfr" width="100%" height="350" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+		</div>
 		<div class="tf-work-section">
 			<div class="container" id="work">
-				<h2 class="h3">Our Success Stories</h2>
+				<h2 class="h3">Nous contacter</h2>
 			</div>
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4 col-sm-12 pt-2">
-						<div class="card"><img class="img-fluid card-img-top" src="images/2-start-simple.jpg" alt="2-start-simple"/>
+						<div class="card">
+							<!-- <img class="img-fluid card-img-top" src="images/2-start-simple.jpg" alt="2-start-simple"/> -->
 							<div class="card-body">
 								<p class="text-muted">Lorem ipsum dolor sit amet consectetur adipiscing elit interdum sagittis, nisi ac aptent vitae est facilisi.</p><a class="text-dark card-link" href="#">Learn More</a>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-4 col-sm-12 pt-2">
-						<div class="card"><img class="img-fluid card-img-top" src="images/3-start-simple.jpg" alt="3-start-simple"/>
+						<div class="card">
+							<!-- <img class="img-fluid card-img-top" src="images/3-start-simple.jpg" alt="3-start-simple"/> -->
 							<div class="card-body">
 								<p class="text-muted">Porttitor varius auctor litora congue sociosqu montes eleifend facilisi elementum convallis, diam et nullam sem.</p><a class="text-dark card-link" href="#">Learn More</a>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-4 col-sm-12 pt-2">
-						<div class="card"><img class="img-fluid card-img-top" src="images/4-start-simple.jpg" alt="4-start-simple"/>
+						<div class="card">
+							<!-- <img class="img-fluid card-img-top" src="images/4-start-simple.jpg" alt="4-start-simple"/> -->
 							<div class="card-body">
 								<p class="text-muted">Commodo convallis varius egestas purus rhoncus cras morbi dignissim, ligula vestibulum ultrices urna semper.</p><a class="text-dark card-link" href="#">Learn More</a>
 							</div>
@@ -48,20 +54,26 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
 				<div class="carousel-inner">
 					<div class="carousel-item active" style="background-image: url('images/5-start-simple-slider.jpg');">
 						<div class="carousel-caption">
-							<p class="slider-text-1">"Amazing product, Start Simple cares for their customers and helps them at every step.<br>I am a satisfied customer!"</p>
-							<p class="slider-text-2">Walter George<br>CEO, Founder of Gupply</p>
+							<p class="slider-text-1">"Je suis très satisfait.<br>Un travail d'artiste!"</p>
+							<p class="slider-text-2">Pierre de Saint Meleuc<br>Fondateur de Google</p>
 						</div>
 					</div>
 					<div class="carousel-item" style="background-image: url('images/6-start-simple-slider.jpg');">
 						<div class="carousel-caption">
-							<p class="slider-text-1">"Start Simple thinks outside the box and offers solutions through the creative process of developing apps.<br>They helped me succeed!"</p>
-							<p class="slider-text-2">Nancy Young<br>Managing Director, Amazingly</p>
+							<p class="slider-text-1">"Quand je l'ai vu, je n'en ai pas cru mes yeux.<br>Surprenant et sensuel, j'adore!"</p>
+							<p class="slider-text-2">Pierre de Saint Meleuc<br>PDG d'Amazon</p>
 						</div>
 					</div>
 					<div class="carousel-item" style="background-image: url('images/7-start-simple-slider.jpg');">
 						<div class="carousel-caption">
-							<p class="slider-text-1">"Simple yet elegant solution to showcase our product and services.<br>Couldn't have asked for more!"</p>
-							<p class="slider-text-2">Glenn Harrold<br>Marketing Manager</p>
+							<p class="slider-text-1">"Je n'avais jamais pensé à un trône en bois par le passé.<br>Je n'aurai pas pu être plus satisfait!"</p>
+							<p class="slider-text-2">Pierre de Saint Meleuc<br>Roi de Belgique</p>
+						</div>
+					</div>
+					<div class="carousel-item" style="background-image: url('images/5-start-simple-slider.jpg');">
+						<div class="carousel-caption">
+							<p class="slider-text-1">"Je suis très satisfait.<br>Un travail d'artiste!"</p>
+							<p class="slider-text-2">Pierre de Saint Meleuc<br>Fondateur de Google</p>
 						</div>
 					</div>
 				</div><a class="carousel-control-prev" href="#tf-carousel" role="button" data-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a class="carousel-control-next" href="#tf-carousel" role="button" data-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="sr-only">Next</span></a>
