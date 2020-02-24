@@ -1,0 +1,2 @@
+-améliorer le rendu graphique
+-trouver un moyen de compresser le menu dans une liste defillante (pour le responsive) pour les téléphones par exemple
