@@ -31,6 +31,7 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
 					<ul class="nav pull-right">
 						<?php
 						echo mkHeadLink("Accueil","accueil",$view);
+						echo mkHeadLink("Nos prestations","prestations",$view);
 						if(!valider("connecte","SESSION")){
 							echo mkHeadLink("Se connecter","signin",$view);
 							echo mkHeadLink("S'inscrire","signup",$view);
@@ -38,6 +39,7 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
 						else{
 							echo mkHeadLink("Se déconnecter","signin",$view);
 						}
+
 						?>
 					</ul>
 				</div>
