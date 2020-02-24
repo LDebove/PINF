@@ -14,6 +14,6 @@ function mkDivImg($file, $alt="image", $folder="images")
 	$url = $folder;
 	$url .= "/";
 	$url .= $file;
-	return "<div class=\"divImgPrestations\"><img src=\"$url\" alt=\"$alt\"></div>";
+	return "<div class=\"divPrestation\"><img src=\"$url\" alt=\"$alt\"><p>$alt</p></div>";
 }
 ?>

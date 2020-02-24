@@ -9291,14 +9291,16 @@ body {
   background-color: #888888;
 }
 
-.divImgPrestations {
+.divPrestation {
   height: 30%;
   max-width: 80%;
   margin: 0 auto;
   margin-top: 50px;
+  border: 2px black solid;
+  border-radius: 0px 0px 15px 15px;
 }
 
-.divImgPrestations img {
+.divPrestation img {
   margin-left: auto;
   margin-right: auto;
   display: block;
