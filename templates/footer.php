@@ -10,7 +10,7 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
 	<div class="container text-light">
 		<div class="row">
 			<div class="col-md-6 col-sm-12">&copy; Your Company Name. All rights reserved.</div>
-			<div class="col-md-6 col-sm-12 text-right tf-design">Design - <a href="https://templateflip.com" target="_blank">Templateflip</a></div>
+			<div class="col-md-6 col-sm-12 text-right tf-design"></div>
 		</div>
 	</div>
 </footer>

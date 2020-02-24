@@ -8,9 +8,11 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
 
 <div class="page-content">
 	<div>
+
 		<div class="googlemap">
 			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2524.906895835793!2d3.1833937159793586!3d50.74021567951635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c32f6a98b57b51%3A0xa13f60d05918dbb0!2s26%20All%C3%A9e%20Louise%20Thuliez%2C%2059200%20Tourcoing!5e0!3m2!1sfr!2sfr!4v1581347399804!5m2!1sfr!2sfr" width="100%" height="350" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
 		</div>
+
 		<div class="tf-work-section">
 			<div class="container" id="work">
 				<h2 class="h3">Nous contacter</h2>
@@ -21,7 +23,8 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
 						<div class="card">
 							<!-- <img class="img-fluid card-img-top" src="images/2-start-simple.jpg" alt="2-start-simple"/> -->
 							<div class="card-body">
-								<p class="text-muted">Lorem ipsum dolor sit amet consectetur adipiscing elit interdum sagittis, nisi ac aptent vitae est facilisi.</p><a class="text-dark card-link" href="#">Learn More</a>
+								<h3 class="h5">Menuiserie du Nord</h3>
+								<span>Fabricant de menuiseries<br/>26 Allée Louise Thuliez<br>59200 Tourcoing<br><strong>Téléphone :</strong> 00 00 00 00 00<br><strong>Fax :</strong> 11 11 11 11 11<br><strong>Mail :</strong> menuis@mail.com</span>
 							</div>
 						</div>
 					</div>
@@ -44,6 +47,7 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
 				</div>
 			</div>
 		</div>
+
 		<div class="tf-quotes-section">
 			<div class="carousel slide mt-5" id="tf-carousel" data-ride="carousel">
 				<ol class="carousel-indicators">
@@ -70,15 +74,11 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
 							<p class="slider-text-2">Pierre de Saint Meleuc<br>Roi de Belgique</p>
 						</div>
 					</div>
-					<div class="carousel-item" style="background-image: url('images/5-start-simple-slider.jpg');">
-						<div class="carousel-caption">
-							<p class="slider-text-1">"Je suis très satisfait.<br>Un travail d'artiste!"</p>
-							<p class="slider-text-2">Pierre de Saint Meleuc<br>Fondateur de Google</p>
-						</div>
-					</div>
-				</div><a class="carousel-control-prev" href="#tf-carousel" role="button" data-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a class="carousel-control-next" href="#tf-carousel" role="button" data-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="sr-only">Next</span></a>
+				</div>
+				<a class="carousel-control-prev" href="#tf-carousel" role="button" data-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a class="carousel-control-next" href="#tf-carousel" role="button" data-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="sr-only">Next</span></a>
 			</div>
 		</div>
+
 		<div class="tf-contact-section">
 			<div class="container" id="contact">
 				<h2 class="h4">Tell us About Your Requirement</h2>
@@ -114,5 +114,6 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
 					</div>
 				</div>
 			</div>
-		</div></div>
+		</div>
 	</div>
+</div>
