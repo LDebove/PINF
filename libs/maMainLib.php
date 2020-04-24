@@ -12,4 +12,9 @@ function mkPrestation($file, $alt="image", $folder="images")
 	$url .= $file;
 	return "<div class=\"prestation\"><img src=\"$url\" alt=\"$alt\"><p>$alt</p></div>";
 }
+
+function mkLivredor($url="images/image-A.png", $alt="Un message")
+{
+	return "<div class=\"livredor\"><img src=\"$url\" alt=\"$alt\"></div>";
+}
 ?>

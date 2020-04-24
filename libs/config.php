@@ -13,7 +13,7 @@ $BDD_base="testdb_<nom>";
 // MACHINE LINUX 
 $BDD_host="localhost";
 $BDD_user="admin";
-$BDD_password="mysql"; // vide sous windows
-$BDD_base="rat2019";
+$BDD_password="mysql";
+$BDD_base="pinf";
 
 ?>

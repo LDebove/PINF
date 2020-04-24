@@ -3,6 +3,7 @@ session_start();
 
 include_once "libs/maLibUtils.php";
 include_once "libs/maMainLib.php";
+include_once "libs/modele.php";
 
 $view = valider("view"); 
 

@@ -12,9 +12,14 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
 	<meta charset="UTF-8">
 	<meta name="description" content="Site Web d'un artisan"/>
 	<title>Menuiserie du Nord</title>
+	<link href="styles/jquery-ui.min.css" rel="stylesheet">
 	<link href="styles/main.css" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="https://code.jquery.com/jquery-ui.min.js"></script>
 	<script src="scripts/main.js"></script>
+	<script src="scripts/cal2.js"></script>
+	<script src="scripts/cal_conf2.js"></script>
+	<script src="scripts/calendrier.js"></script>
 </head>
 
 <body>
@@ -27,6 +32,7 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
 				echo mkHeadLink("Nos prestations","prestations",$view);
 				echo mkHeadLink("Livre d'or","livredor",$view);
 				if(!valider("connecte","SESSION")){
+					echo mkHeadLink("Rendez-vous","calendrier",$view);
 					echo mkHeadLink("Se connecter","signin",$view);
 					echo mkHeadLink("S'inscrire","signup",$view);
 				}

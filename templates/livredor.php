@@ -7,14 +7,7 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
 ?>
 
 <div class="page-content">
-	<div class="livredor">
-		<div class="livredor-content">
-			<div class="livredor-comment">
-				
-			</div>
-			<div class="livredor-image">
-				
-			</div>
-		</div>
-	</div>
+<?php
+	print_r(listerUtilisateurs());
+?>
 </div>

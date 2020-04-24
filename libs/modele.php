@@ -5,7 +5,7 @@
 include_once("maLibSQL.pdo.php");
 
 
-function listerUtilisateurs($classe = "both")
+function listerUtilisateurs()
 {
 	// NB : la présence du symbole '=' indique la valeur par défaut du paramètre s'il n'est pas fourni
 	// Cette fonction liste les utilisateurs de la base de données 
@@ -18,12 +18,13 @@ function listerUtilisateurs($classe = "both")
 	// Lorsqu'elle vaut "nbl", elle ne renvoie que les utilisateurs non blacklistés
 
 	$SQL = "select * from users";
-	if ($classe == "bl")
-		$SQL .= " where blacklist=1";
-	if ($classe == "nbl")
-		$SQL .= " where blacklist=0";
+	// if ($classe == "bl")
+	// 	$SQL .= " where blacklist=1";
+	// if ($classe == "nbl")
+	// 	$SQL .= " where blacklist=0";
 	
 	// echo $SQL;
+	
 	return parcoursRs(SQLSelect($SQL));
 
 }
