@@ -37,7 +37,7 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
 					echo mkHeadLink("S'inscrire","signup",$view);
 				}
 				else{
-					echo mkHeadLink("Se déconnecter","signin",$view);
+					echo mkHeadLink("Se déconnecter","accueil",$view);
 				}
 				?>
 				<a href="javascript:void(0);" class="icon" onclick="responsiveMenu()">
