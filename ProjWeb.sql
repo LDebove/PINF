@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  localhost:3306
--- Généré le :  Ven 24 Avril 2020 à 16:27
+-- Généré le :  Ven 24 Avril 2020 à 17:02
 -- Version du serveur :  5.7.29-0ubuntu0.18.04.1
 -- Version de PHP :  7.2.24-0ubuntu0.18.04.4
 
@@ -71,21 +71,22 @@ CREATE TABLE `rendez_vous` (
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL COMMENT 'clé primaire, identifiant numérique auto incrémenté',
-  `identifiant` varchar(20) CHARACTER SET latin1 NOT NULL COMMENT 'identifiant',
+  `login` varchar(20) CHARACTER SET latin1 NOT NULL COMMENT 'identifiant',
   `passe` varchar(20) CHARACTER SET latin1 NOT NULL COMMENT 'mot de passe',
   `admin` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'indique si l utilisateur est un administrateur ou si il est blacklist',
   `nom` varchar(20) CHARACTER SET latin1 NOT NULL COMMENT 'nom',
   `prenom` varchar(20) CHARACTER SET latin1 NOT NULL COMMENT 'prenom',
-  `mail` varchar(60) CHARACTER SET latin1 NOT NULL COMMENT 'mail'
+  `mail` varchar(60) CHARACTER SET latin1 NOT NULL COMMENT 'mail',
+  `blacklist` int(11) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `users`
 --
 
-INSERT INTO `users` (`id`, `identifiant`, `passe`, `admin`, `nom`, `prenom`, `mail`) VALUES
-(1, 'Pierre', 'PDSM', 0, 'de Saint-Meleuc', 'Pierre', 'pinf.hyperion.hotmail.com'),
-(2, 'admin', 'admin', 1, 'admin', 'admin', 'pinf.hyperion.hotmail.com');
+INSERT INTO `users` (`id`, `login`, `passe`, `admin`, `nom`, `prenom`, `mail`, `blacklist`) VALUES
+(1, 'Pierre', 'PDSM', 0, 'de Saint-Meleuc', 'Pierre', 'pinf.hyperion.hotmail.com', 1),
+(2, 'admin', 'admin', 1, 'admin', 'admin', 'pinf.hyperion.hotmail.com', NULL);
 
 --
 -- Index pour les tables exportées

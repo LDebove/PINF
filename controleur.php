@@ -55,12 +55,7 @@ session_start();
 				}
 				break;
 				// On redirigera vers la page index automatiquement
-			case 'newExam':
-				$nomExam = $_POST['nom_exam'];
-				$SQL = "INSERT INTO examens (nom_exam) VALUES ('$nomExam')"; 
-				return SQLInsert($SQL);
-				$qs = "?view=connecte";
-			break;
+
 			case 'newuser':
 				if (veriprofbdd($pseudo)) {
 					if ($nom = valider("nom"))

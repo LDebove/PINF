@@ -29,14 +29,6 @@ function autoriserUtilisateur($idUser)
 
 function findIdUser($login,$passe)
 {
-<<<<<<< HEAD
-=======
-	// Vérifie l'identité d'un utilisateur 
-	// dont les identifiants sont passes en paramètre
-	// renvoie faux si user inconnu
-	// renvoie l'id de l'utilisateur si succès
-
->>>>>>> e4de9e7ebb29931a949496be1d90cbfe02e5c762
 	$SQL="SELECT id FROM users WHERE identifiant='$login' AND passe='$passe'";
 
 	return SQLGetChamp($SQL);
