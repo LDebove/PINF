@@ -1,6 +1,7 @@
 <?php
 function mkHeadLink($label, $view, $currentView="", $class="")
 {
+	if ($label=="Se déconnecter") return ' <a href="controleur.php?action=Logout" >Se déconnecter </a>';
 	if($view == $currentView) $class .= " active";
 	return "<a href=\"index.php?view=$view\" class=\"$class\">$label</a>";
 }

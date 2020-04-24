@@ -68,6 +68,7 @@ session_start();
 				}
 
 			break;
+			
 			case 'Logout' :
 				session_destroy();
 			break;

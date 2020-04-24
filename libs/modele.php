@@ -27,9 +27,9 @@ function autoriserUtilisateur($idUser)
 	SQLUpdate($SQL);
 }
 
-function findIdUser($login,$passe)
+function verifUserBdd($login,$passe)
 {
-	$SQL="SELECT id FROM users WHERE identifiant='$login' AND passe='$passe'";
+	$SQL="SELECT id FROM users WHERE login='$login' AND passe='$passe'";
 
 	return SQLGetChamp($SQL);
 }
