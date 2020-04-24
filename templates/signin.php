@@ -19,11 +19,11 @@ if ($checked = valider("remember", "COOKIE")) $checked = "checked";
 
       <form role="form" action="controleur.php">
         <div class="form-group">
-          <label for="email">Login</label>
+          <label for="email">Identifiant</label>
           <input type="text" class="form-control" id="email" name="login" value="<?php echo $login;?>" >
         </div>
         <div class="form-group">
-          <label for="pwd">Passe</label>
+          <label for="pwd">Mot de Passe</label>
           <input type="password" class="form-control" id="pwd" name="passe" value="<?php echo $passe;?>">
         </div>
         <div class="checkbox">

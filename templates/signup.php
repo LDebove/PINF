@@ -25,32 +25,32 @@ if ($checked = valider("remember", "COOKIE")) $checked = "checked";
 
       <form role="form" action="controleur.php">
         <div class="form-group">
-          <label for="email">* Login </label>
-          <input type="text" class="form-control" id="email" name="login" value="<?php echo $login;?>" >
+          <label for="login">* Identifiant</label>
+          <input type="text" class="form-control" id="login" name="login">
         </div>
         <div class="form-group">
           <label for="pwd">* Mot de Passe</label>
-          <input type="password" class="form-control" id="pwd" name="passe" value="<?php echo $passe;?>">
+          <input type="password" class="form-control" id="pwd" name="passe1">
         </div>
         <div class="form-group">
-          <label for="pwd">Nom</label>
-          <input type="password" class="form-control" id="pwd" name="passe" value="<?php echo $passe;?>">
+          <label for="confirmPwd">* Confirmation Mot de Passe</label>
+          <input type="password" class="form-control" id="confirmPwd" name="passe2">
         </div>
         <div class="form-group">
-          <label for="pwd">Prénom</label>
-          <input type="password" class="form-control" id="pwd" name="passe" value="<?php echo $passe;?>">
+          <label for="mail">* Adresse Mail</label>
+          <input type="text" class="form-control" id="mail" name="mail">
         </div>
         <div class="form-group">
-          <label for="pwd">* Confirmation Mot de Passe</label>
-          <input type="password" class="form-control" id="pwd" name="passe" value="<?php echo $passe;?>">
+          <label for="nom">Nom</label>
+          <input type="text" class="form-control" id="nom" name="nom">
         </div>
         <div class="form-group">
-          <label for="pwd">* Email</label>
-          <input type="password" class="form-control" id="pwd" name="passe" value="<?php echo $passe;?>">
+          <label for="prenom">Prénom</label>
+          <input type="text" class="form-control" id="prenom" name="prenom">
         </div>
         <div class="form-group">
-          <label for="pwd">Téléphone</label>
-          <input type="password" class="form-control" id="pwd" name="passe" value="<?php echo $passe;?>">
+          <label for="telephone">Téléphone</label>
+          <input type="text" class="form-control" id="telephone" name="telephone">
         </div>
         <button type="submit" name="action" value="Connexion" class="btn btn-default">S'inscrire</button>
       </form>
