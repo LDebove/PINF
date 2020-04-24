@@ -1,28 +1,31 @@
 <?php
 session_start();
 
-include_once "libs/maLibUtils.php";
-include_once "libs/maMainLib.php";
-include_once "libs/modele.php";
+	include_once "libs/maLibUtils.php";
+	include_once "libs/maMainLib.php";
+	include_once "libs/modele.php";
 
-$view = valider("view"); 
 
-if (!$view) $view = "accueil"; 
+	$view = valider("view"); 
 
-include("templates/header.php");
+	if (!$view) $view = "accueil"; 
 
-switch($view)
-{		
+	include("templates/header.php");
 
-	case "accueil" : 
-	include("templates/accueil.php");
-	break;
 
-	default :
-	if (file_exists("templates/$view.php"))
-		include("templates/$view.php");
-}
-include("templates/footer.php");
+
+	switch($view)
+	{		
+
+		case "accueil" : 
+		include("templates/accueil.php");
+		break;
+
+		default :
+		if (file_exists("templates/$view.php"))
+			include("templates/$view.php");
+	}
+	include("templates/footer.php");
 ?>
 
 
