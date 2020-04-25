@@ -18,26 +18,26 @@ if ($checked = valider("remember", "COOKIE")) $checked = "checked";
   <div class="signup">
     <div class="page-header">
       <h1>Inscription</h1>
-      <p>Les champs marqués d'une * sont OBLIGATOIRES</p>
+      <p>Les champs marqués d'une <span style="color: red;">*</span> sont OBLIGATOIRES</p>
     </div>
 
     <p class="lead">
 
       <form role="form" action="controleur.php">
         <div class="form-group">
-          <label for="login">* Identifiant</label>
+          <label for="login"><span style="color: red;">*</span> Identifiant</label>
           <input type="text" class="form-control" id="login" name="login">
         </div>
         <div class="form-group">
-          <label for="pwd">* Mot de Passe</label>
+          <label for="pwd"><span style="color: red;">*</span> Mot de Passe</label>
           <input type="password" class="form-control" id="pwd" name="passe1">
         </div>
         <div class="form-group">
-          <label for="confirmPwd">* Confirmation Mot de Passe</label>
+          <label for="confirmPwd"><span style="color: red;">*</span> Confirmation Mot de Passe</label>
           <input type="password" class="form-control" id="confirmPwd" name="passe2">
         </div>
         <div class="form-group">
-          <label for="mail">* Adresse Mail</label>
+          <label for="mail"><span style="color: red;">*</span> Adresse Mail</label>
           <input type="text" class="form-control" id="mail" name="mail">
         </div>
         <div class="form-group">
