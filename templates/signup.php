@@ -6,12 +6,6 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
 	header("Location:../index.php?view=login");
 	die("");
 }
-
-// Chargement eventuel des données en cookies
-$login = valider("login", "COOKIE");
-$passe = valider("passe", "COOKIE"); 
-if ($checked = valider("remember", "COOKIE")) $checked = "checked"; 
-
 ?>
 
 <div class="page-content">
@@ -52,7 +46,22 @@ if ($checked = valider("remember", "COOKIE")) $checked = "checked";
           <label for="telephone">Téléphone</label>
           <input type="text" class="form-control" id="telephone" name="telephone">
         </div>
-        <button type="submit" name="action" value="Connexion" class="btn btn-default">S'inscrire</button>
+        <button type="submit" name="action" value="Email" class="btn btn-default">S'inscrire</button>
+
+        <?php
+        //SI l'utilisateur a entré les bonnes données, on affiche un popup demandant un code ayant été transmit par mail
+          if($_POST['action'] == "Email"){
+            if ($login = valider("login"))
+            if ($passe1 = valider("passe1"))
+            if ($passe2 = valider("passe2"))
+            if ($passe1 == $passe2)
+            if ($mail = valider("mail"))
+            if (!verifMailExist($mail))
+            if (!verifUserExist($login))
+              echo "<div id=\"form-group-verif\"><input type=\"text\" class=\"form-control\" id=\"code\" name=\"code\"><button type=\"submit\" name=\"action\" value=\"Newuser\" class=\"btn btn-default\">Valider</button></div>";
+          }
+        ?>
+
       </form>
 
     </p>

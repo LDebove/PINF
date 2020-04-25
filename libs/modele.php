@@ -34,5 +34,26 @@ function verifUserBdd($login,$passe)
 	return SQLGetChamp($SQL);
 }
 
+function verifMailExist($mail)
+{
+	$SQL="SELECT id FROM users WHERE mail='$mail'";
 
+	if(SQLGetChamp($SQL)!=NULL) return true;
+	else return false;
+}
+
+function verifUserExist($login)
+{
+	$SQL="SELECT id FROM users WHERE login='$login'";
+
+	if(SQLGetChamp($SQL)!=NULL) return true;
+	else return false;
+}
+
+function creerUserBdd($login,$passe,$nom,$prenom,$mail,$telephone,$admin=0)
+{
+	$SQL="INSERT INTO users(login,passe,mail,telephone,nom,prenom,admin) VALUES('$login','$passe','$mail','$telephone','$nom','$prenom','$admin')";
+
+	SQLInsert($SQL);
+}
 ?>

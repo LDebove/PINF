@@ -56,24 +56,35 @@ session_start();
 				break;
 				// On redirigera vers la page index automatiquement
 
-			case 'newuser':
-				if (veriprofbdd($pseudo)) {
-					if ($nom = valider("nom"))
-					if ($mdp = valider("mdp"))
-					if ($mdp2 = valider("mdp2"))
-					if ($mdp == $mdp2)
-					{
-						creeruserbdd($nom,$mdp);
-					}	
-				}
+			case 'Newuser':
+				if ($login = valider("login"))
+				if ($passe1 = valider("passe1"))
+				if ($passe2 = valider("passe2"))
+				if ($passe1 == $passe2)
+				if ($mail = valider("mail"))
+				if ($code = valider("code"))//JE NE SAIS PAS COMMENT VERIF LE CODE EMAIL MAIS IL FAUT LE VERIF (TODO)
+				if (!verifMailExist($mail))
+				if (!verifUserExist($login))
+				{
+					//pas de validation car peut être nul et en plus ça peut contenir nimp
+					$nom = $_REQUEST["nom"];
+					$prenom = $_REQUEST["prenom"];
+					$telephone = $_REQUEST["telephone"];
 
+					creerUserBdd($login,$passe,$mail,$telephone,$nom,$prenom);
+				}
 			break;
 			
 			case 'Logout' :
 				session_destroy();
 			break;
 
+			case 'Email' :
+				//INSERER ENVOI EMAIL
+			break;
 
+			default:
+			break;
 
 
 		}

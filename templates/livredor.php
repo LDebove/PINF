@@ -8,6 +8,6 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
 
 <div class="page-content">
 <?php
-	
+	print_r(verifUserBdd("admin","a"));
 ?>
 </div>
