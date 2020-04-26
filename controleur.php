@@ -80,6 +80,26 @@ session_start();
 			break;
 
 			case 'Email' :
+				if ($login = valider("login"))
+				if ($passe1 = valider("passe1"))
+				if ($passe2 = valider("passe2"))
+				if ($passe1 == $passe2)
+				if ($mail = valider("mail"))					
+				if ( preg_match ( " /[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+.[a-zA-Z]{2,4}/ " , $mail ) )
+				if ($telephone = valider("telephone"))
+				if ( preg_match(" /^(\+\d+(\s|-))?0\d(\s|-)?(\d{2}(\s|-)?){4}$/ ", $telephone))
+				if (!verifMailExist($mail))
+				if (!verifUserExist($login)){
+					//$fichier=fopen('debug','w');
+					//fwrite($fichier, 'L\'user n\'est pas dans la BDD');
+					//fclose($fichier);
+					$_SESSION['CodeAVerif'] = MailCreationCompte($mail);
+					$fichier=fopen('debug','w');
+					fwrite($fichier, $_SESSION['CodeAVerif']);
+					fclose($fichier);
+				}
+					 //if(preg_match(" /^[1-9][0-9]{4}$/ ", $CodeAVerif )) Sert à vérifier en code entré
+				
 				//INSERER ENVOI EMAIL
 			break;
 

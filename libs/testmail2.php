@@ -48,12 +48,15 @@ require 'PHPMailer/src/SMTP.php';
 
 	
 function MailCreationCompte($dest){
+          //$fichier=fopen('deb','w');
+          //fwrite($fichier, 'Dans MailCreationCompte, adresse mail :');
+          //fclose($fichier);
   $NbValidation = rand(10000, 99999);
   //$dest = "p.desaintmeleuc@laposte.net"; 
   $objet = "Confirmation de votre adresse mail"; 
-  $contenu = "<br />'Bonjour, veuillez saisir le nombre ci-dessous'"; 
+  $contenu = "<br />Bonjour, pour valider la creation de votre compte, veuillez saisir le nombre ci-dessous"; 
   $contenu .= "<br /><br />Votre nombre :".$NbValidation;
-  $contenu .= "<br /><br />Envoyé le : ".date("d/m/Y"); 
+  $contenu .= "<br /><br />Envoye le : ".date("d/m/Y"); 
   //echo $NbValidation;
   sendmail($objet, $contenu, $dest);
   return $NbValidation;
