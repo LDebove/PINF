@@ -59,9 +59,9 @@ session_start();
 			case 'Newuser':
 				if (preg_match(" /^[1-9][0-9]{4}$/ ", $_REQUEST['code']))//JE NE SAIS PAS COMMENT VERIF LE CODE EMAIL MAIS IL FAUT LE VERIF (TODO)
 				{
-					$fichier=fopen('debug','w');
-					fwrite($fichier, $_SESSION['mail']);
-					fclose($fichier);
+					//$fichier=fopen('debug','w');
+					//fwrite($fichier, $_SESSION['mail']);
+					//fclose($fichier);
 					if ($_SESSION['CodeAVerif']==$_REQUEST['code']) {
 						//$fichier=fopen('debug','w');
 						//fwrite($fichier, 'meme code');
@@ -71,11 +71,14 @@ session_start();
 							setcookie("login",$_SESSION['login'] , time()+60*60*24*30);
 							setcookie("passe",$_SESSION['passe'], time()+60*60*24*30);
 							setcookie("remember",false, time()+60*60*24*30);
+							$_SESSION['connecte']="1";
 						//creerUserBdd($login,$passe,$nom,$prenom,$mail,$telephone)
-					}
-					
+					}					
 				}
-			
+				$fichier=fopen('debug','w');
+				fwrite($fichier, $_SESSION['mail']);
+				fclose($fichier);
+
 			break;
 			
 			case 'Logout' :
