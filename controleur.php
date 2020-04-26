@@ -57,22 +57,25 @@ session_start();
 				// On redirigera vers la page index automatiquement
 
 			case 'Newuser':
-				if ($login = valider("login"))
-				if ($passe1 = valider("passe1"))
-				if ($passe2 = valider("passe2"))
-				if ($passe1 == $passe2)
-				if ($mail = valider("mail"))
-				if ($code = valider("code"))//JE NE SAIS PAS COMMENT VERIF LE CODE EMAIL MAIS IL FAUT LE VERIF (TODO)
-				if (!verifMailExist($mail))
-				if (!verifUserExist($login))
+				if (preg_match(" /^[1-9][0-9]{4}$/ ", $_REQUEST['code']))//JE NE SAIS PAS COMMENT VERIF LE CODE EMAIL MAIS IL FAUT LE VERIF (TODO)
 				{
-					//pas de validation car peut être nul et en plus ça peut contenir nimp
-					$nom = $_REQUEST["nom"];
-					$prenom = $_REQUEST["prenom"];
-					$telephone = $_REQUEST["telephone"];
-
-					creerUserBdd($login,$passe,$mail,$telephone,$nom,$prenom);
+					$fichier=fopen('debug','w');
+					fwrite($fichier, $_SESSION['mail']);
+					fclose($fichier);
+					if ($_SESSION['CodeAVerif']==$_REQUEST['code']) {
+						//$fichier=fopen('debug','w');
+						//fwrite($fichier, 'meme code');
+						//fclose($fichier);
+						creerUserBdd($_SESSION['login'],$_SESSION['passe'],$_SESSION['nom'],$_SESSION['prenom'],$_SESSION['mail'],$_SESSION['telephone']);
+						
+							setcookie("login",$_SESSION['login'] , time()+60*60*24*30);
+							setcookie("passe",$_SESSION['passe'], time()+60*60*24*30);
+							setcookie("remember",false, time()+60*60*24*30);
+						//creerUserBdd($login,$passe,$nom,$prenom,$mail,$telephone)
+					}
+					
 				}
+			
 			break;
 			
 			case 'Logout' :
@@ -86,14 +89,23 @@ session_start();
 				if ($passe1 == $passe2)
 				if ($mail = valider("mail"))					
 				if ( preg_match ( " /[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+.[a-zA-Z]{2,4}/ " , $mail ) )
-				if ($telephone = valider("telephone"))
+				if ($_REQUEST['telephone']=='' || $telephone = valider("telephone"))
 				if ( preg_match(" /^(\+\d+(\s|-))?0\d(\s|-)?(\d{2}(\s|-)?){4}$/ ", $telephone))
+				if ($_REQUEST['nom']=='' || $nom = valider("nom"))
+				if ($_REQUEST['prenom']=='' || $prenom = valider("prenom"))
 				if (!verifMailExist($mail))
 				if (!verifUserExist($login)){
+					$_SESSION['login']=$login;
+					$_SESSION['passe']=$passe1;
+					$_SESSION['mail']=$mail;
+					$_SESSION['telephone']=$telephone;
+					$_SESSION['nom']=$nom;
+					$_SESSION['prenom']=$prenom;
+
 					//$fichier=fopen('debug','w');
 					//fwrite($fichier, 'L\'user n\'est pas dans la BDD');
 					//fclose($fichier);
-					//$_SESSION['CodeAVerif'] = MailCreationCompte($mail);
+					$_SESSION['CodeAVerif'] = MailCreationCompte($mail);
 					//$fichier=fopen('debug','w');
 					//fwrite($fichier, $_SESSION['CodeAVerif']);
 					//fclose($fichier);
