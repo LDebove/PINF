@@ -93,10 +93,12 @@ session_start();
 					//$fichier=fopen('debug','w');
 					//fwrite($fichier, 'L\'user n\'est pas dans la BDD');
 					//fclose($fichier);
-					$_SESSION['CodeAVerif'] = MailCreationCompte($mail);
-					$fichier=fopen('debug','w');
-					fwrite($fichier, $_SESSION['CodeAVerif']);
-					fclose($fichier);
+					//$_SESSION['CodeAVerif'] = MailCreationCompte($mail);
+					//$fichier=fopen('debug','w');
+					//fwrite($fichier, $_SESSION['CodeAVerif']);
+					//fclose($fichier);
+					header("Location:./index.php?view=prestations");
+					die("");
 				}
 					 //if(preg_match(" /^[1-9][0-9]{4}$/ ", $CodeAVerif )) Sert à vérifier en code entré
 				
