@@ -97,7 +97,7 @@ session_start();
 					//$fichier=fopen('debug','w');
 					//fwrite($fichier, $_SESSION['CodeAVerif']);
 					//fclose($fichier);
-					header("Location:./index.php?view=prestations");
+					header("Location:./index.php?view=confirmation");
 					die("");
 				}
 					 //if(preg_match(" /^[1-9][0-9]{4}$/ ", $CodeAVerif )) Sert à vérifier en code entré
