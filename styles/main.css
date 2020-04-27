@@ -444,6 +444,7 @@ h1, h2, h3, h4, h5, h6 {
 .Grille_RDV {
   position: absolute;
   top: 40%; /*de 0% à 92%*/
+  height: 200px;
   width:196px;
   border-right:3px solid #666666;
   border-top:1px solid #666666;
@@ -462,10 +463,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .Grille_RDV_p, .Grille_RDV_dispo{
+  display: inline;
+/*
   position: absolute;
   left: 50%;
   bottom: 50%;
   transform: translate(-50%, -50%);
+*/
 }
 
 #demander_RDV, #modifier_RDV {
@@ -477,6 +481,24 @@ h1, h2, h3, h4, h5, h6 {
   border-bottom:1px solid #848484;
   display: none;
 }
+
+
+
+
+
+/*
+TODO :  -recentrer Grille_RDV(p et dispo)
+  -modifier css demander_RDV
+
+
+
+
+
+
+
+
+*/
+
 
 
 

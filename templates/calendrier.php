@@ -70,10 +70,8 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
 
 
 <div id="demander_RDV">
-<p>Prise de rendez-vous.</p>
-<p>Jour :</p>
-<p>Horaire :</p>
-<input type="button"  value="Selectionner" id="but_demander_RDV"/>
+<input type='button'  value='Selectionner' id='but_demander_RDV'/>
+<input type='button'  value='Supprimer' id='but_supprimer_RDV'/>
 </div>
 
 <div id="modifier_RDV">

@@ -56,4 +56,29 @@ function creerUserBdd($login,$passe,$nom,$prenom,$mail,$telephone,$admin=0)
 
 	SQLInsert($SQL);
 }
+
+function listerRDV($date)
+{
+	$SQL = "SELECT `date`, `heure_depart`, `heure_fin` FROM disponibilite WHERE date='$date';";
+	return parcoursRs(SQLSelect($SQL));
+}
+
+function addRDV($date, $depart, $fin)
+{
+	$SQL = "INSERT INTO `disponibilite` (`date`, `heure_depart`, `heure_fin`) VALUES ('$date', '$depart', '$fin');";
+	return SQLInsert($SQL);
+}
+
+function selectRDV($date, $depart)
+{
+	$SQL = "SELECT `date`, `heure_depart`, `heure_fin` FROM disponibilite WHERE date='$date' && heure_depart='$depart';";
+	return parcoursRs(SQLSelect($SQL));
+}
+
+function deleteRDV($date, $depart)
+{
+	$SQL = "delete FROM disponibilite WHERE date='$date' && heure_depart='$depart';";
+	return SQLDelete($SQL);
+}
+
 ?>
