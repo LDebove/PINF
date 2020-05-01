@@ -32,11 +32,11 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
 				echo mkHeadLink("Nos prestations","prestations",$view);
 				echo mkHeadLink("Livre d'or","livredor",$view);
 				if(!valider("connecte","SESSION")){
-					echo mkHeadLink("Rendez-vous","calendrier",$view);
 					echo mkHeadLink("Se connecter","signin",$view);
 					echo mkHeadLink("S'inscrire","signup",$view);
 				}
 				else{
+					echo mkHeadLink("Rendez-vous","calendrier",$view);
 					echo mkHeadLink("Se déconnecter","accueil",$view);
 				}
 				?>

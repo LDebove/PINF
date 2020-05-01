@@ -19,7 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `pinf`
 --
-
 DROP DATABASE IF EXISTS pinf;
 CREATE DATABASE pinf;
 
@@ -74,9 +73,9 @@ CREATE TABLE `users` (
   `login` varchar(20) CHARACTER SET latin1 NOT NULL COMMENT 'identifiant',
   `passe` varchar(20) CHARACTER SET latin1 NOT NULL COMMENT 'mot de passe',
   `mail` varchar(60) CHARACTER SET latin1 NOT NULL COMMENT 'mail',
-  `telephone` varchar(12) CHARACTER SET latin1 NOT NULL COMMENT 'téléphone',
-  `nom` varchar(20) CHARACTER SET latin1 NOT NULL COMMENT 'nom',
-  `prenom` varchar(20) CHARACTER SET latin1 NOT NULL COMMENT 'prenom',
+  `telephone` varchar(12) CHARACTER SET latin1 COMMENT 'téléphone',
+  `nom` varchar(20) CHARACTER SET latin1 COMMENT 'nom',
+  `prenom` varchar(20) CHARACTER SET latin1 COMMENT 'prenom',
   `admin` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'indique si l utilisateur est un administrateur',
   `blacklist` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'indique si l utilisateur est blacklisté'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;

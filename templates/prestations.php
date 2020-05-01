@@ -7,9 +7,11 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
 ?>
 
 <div class="page-content">
-  <?php
-  echo mkPrestation("test.png", "test a ezfneurnfjz nr zenzifnzefnze ner");
-  echo mkPrestation("amazon.jpg", "test efizef berughezhb fjekengf jengi");
-  echo mkPrestation("amazon2.png", "test");
-  ?>
+	<div class="prestations">
+		<?php
+		echo mkPrestation("test.png", "test a ezfneurnfjz nr zenzifnzefnze ner");
+		echo mkPrestation("amazon.jpg", "test efizef berughezhb fjekengf jengi");
+		echo mkPrestation("amazon2.png", "test");
+		?>
+	</div>
 </div>
