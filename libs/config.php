@@ -10,10 +10,10 @@ $BDD_base="testdb_<nom>";
 */
 
 
-// MACHINE LINUX 
+// MACHINE LINUX
 $BDD_host="localhost";
-$BDD_user="MenuiserieDuNord";
-$BDD_password="T7TpVbz^dmr0^Tx=+l";
+$BDD_user="pourqwcd_MenuiserieDuNord";
+$BDD_password="mysql59VBAtest";
 $BDD_base="pourqwcd_pinf";
 
 ?>

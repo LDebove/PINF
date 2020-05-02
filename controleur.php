@@ -135,7 +135,7 @@ session_start();
 	$urlBase = dirname($_SERVER["PHP_SELF"]) . "/index.php";
 	// On redirige vers la page index avec les bons arguments
 
-	header("Location:" . $urlBase . $qs);
-
+	//header("Location:" . $urlBase . $qs);
+	header("Location: http://pourlepinf.zd.fr" . $urlBase . $qs);
 	// On écrit seulement après cette entête
 	ob_end_flush();
