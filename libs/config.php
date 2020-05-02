@@ -12,8 +12,8 @@ $BDD_base="testdb_<nom>";
 
 // MACHINE LINUX
 $BDD_host="localhost";
-$BDD_user="pourqwcd_MenuiserieDuNord";
-$BDD_password="mysql59VBAtest";
-$BDD_base="pourqwcd_pinf";
+$BDD_user="admin";
+$BDD_password="mysql";
+$BDD_base="pinf";
 
 ?>

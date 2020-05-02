@@ -1,7 +1,7 @@
 <?php
 if (basename($_SERVER["PHP_SELF"]) != "index.php")
 {
-	header("Location:../index.php?view=login");
+	header("Location:../index.php?view=signin");
 	die("");
 }
 
@@ -27,6 +27,7 @@ if ($checked = valider("remember", "COOKIE")) $checked = "checked";
       <p class="checkbox">
         <label><input type="checkbox" name="remember" <?php echo $checked;?> >Se souvenir de moi</label>
       </p>
+      <p><span style="color: red;"><?php if(isset($_SESSION['erreursignin'])) echo $_SESSION['erreursignin']; ?></span></p>
       <button type="submit" name="action" value="Connexion" class="btn btn-default">Se connecter</button>
     </form>
 

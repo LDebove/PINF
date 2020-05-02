@@ -81,4 +81,11 @@ function deleteRDV($date, $depart)
 	return SQLDelete($SQL);
 }
 
+function verifUserAdmin($id)
+{
+	$SQL = "SELECT admin FROM users WHERE id = $id";
+	if(SQLGetChamp($SQL)==1) return true;
+	else return false;
+}
+
 ?>

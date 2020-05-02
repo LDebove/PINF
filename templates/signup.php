@@ -1,11 +1,15 @@
 <?php
-
 // Si la page est appelée directement par son adresse, on redirige en passant pas la page index
 if (basename($_SERVER["PHP_SELF"]) != "index.php")
 {
-	header("Location:../index.php?view=login");
+	header("Location:../index.php?view=signup");
 	die("");
 }
+
+if(isset($_SESSION['erreurMail'])) $mail = $_SESSION['erreurMail'];
+else $mail="";
+if(isset($_SESSION['erreurLogin'])) $login = $_SESSION['erreurLogin'];
+else $login="";
 ?>
 
 <div class="page-content">
@@ -18,7 +22,7 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
     <form role="form" action="controleur.php">
       <p class="form-group">
         <label for="login"><span style="color: red;">*</span> Identifiant :</label>
-        <input type="text" class="form-control" id="login" name="login">
+        <input type="text" class="form-control" id="login" name="login" value="<?php echo $login;?>">
       </p>
       <p class="form-group">
         <label for="pwd"><span style="color: red;">*</span> Mot de Passe :</label>
@@ -30,7 +34,7 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
       </p>
       <p class="form-group">
         <label for="mail"><span style="color: red;">*</span> Adresse Mail :</label>
-        <input type="text" class="form-control" id="mail" name="mail">
+        <input type="text" class="form-control" id="mail" name="mail" value="<?php echo $mail;?>">
       </p>
       <p class="form-group">
         <label for="nom">Nom :</label>
@@ -44,6 +48,7 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
         <label for="telephone">Téléphone :</label>
         <input type="text" class="form-control" id="telephone" name="telephone">
       </p>
+      <p><span style="color: red;"><?php if(isset($_SESSION['erreur'])) echo $_SESSION['erreur']; ?></span></p>
       <button type="submit" name="action" value="Email" class="btn btn-default">S'inscrire</button>
     </form>
   </div>

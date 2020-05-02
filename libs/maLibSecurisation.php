@@ -32,6 +32,7 @@ function verifUser($login,$password)
 	$_SESSION["idUser"] = $id;
 	$_SESSION["connecte"] = true;
 	$_SESSION["heureConnexion"] = date("H:i:s");
+	if(verifUserAdmin($id)) $_SESSION["admin"] = 1;
 	return true;
 	
 }
