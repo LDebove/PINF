@@ -133,6 +133,29 @@ if ($action = valider("action"))
 				//INSERER ENVOI EMAIL
 				break;
 
+				case 'delComment' :
+				$idcomment=valider("idComment");
+
+				deleteComment($idcomment);
+
+				header("Location:./index.php?view=livredor");
+				die("");
+				break;
+
+				case 'Blacklister':
+				$id2=valider("IDaBlack");
+				interdireUtilisateur($id2);
+				header("Location:./index.php?view=gestionUtilisateur");
+				die("");
+				break;
+
+				case 'Autoriser':
+				$id3=valider("IDAut");
+				autoriserUtilisateur($id3);
+				header("Location:./index.php?view=gestionUtilisateur");
+				die("");
+				break;
+				
 				default:
 				break;
 

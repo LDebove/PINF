@@ -90,7 +90,7 @@ function verifUserAdmin($id)
 
 function getCom()
 {
-	$SQL = "SELECT * FROM livre_or";
+	$SQL = "SELECT L.id, L.id_users, L.date, L.titre, L.texte FROM livre_or L, users U WHERE U.blacklist=0 AND L.id_users=U.id";
 	return parcoursRs(SQLSelect($SQL));
 }
 
@@ -98,5 +98,24 @@ function getUser()
 {
     $SQL = "SELECT * FROM users WHERE admin=0";
     return parcoursRs(SQLSelect($SQL));
+}
+
+function getNameFromId($id)
+{
+	$SQL = "SELECT login FROM users WHERE id=$id";
+	return SQLGetChamp($SQL);
+}
+
+function verifUserBlacklist($id)
+{
+	$SQL = "SELECT blacklist FROM users WHERE id = $id";
+	if(SQLGetChamp($SQL)==1) return true;
+	else return false;
+}
+
+function deleteComment($idcomment)
+{
+	$SQL = "DELETE FROM livre_or WHERE id=$idcomment";
+	return SQLDelete($SQL);
 }
 ?>
