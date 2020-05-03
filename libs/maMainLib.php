@@ -14,8 +14,27 @@ function mkPrestation($file, $alt="image", $folder="images")
 	return "<div class=\"prestation\"><img src=\"$url\" alt=\"$alt\"><p>$alt</p></div>";
 }
 
-function mkLivredor($url="images/image-A.png", $alt="Un message")
+function mkLivredor($commentaire, $admin=0)
 {
-	return "<div class=\"livredor\"><img src=\"$url\" alt=\"$alt\"></div>";
+	$id=$commentaire["id"];
+	$id_users=$commentaire["id_users"];
+	$date=$commentaire["date"];
+	$titre=$commentaire["titre"];
+	$texte=$commentaire["texte"];
+
+	if($admin==0) return "<div class=\"livredor-comment $id $id_users\"><h1>$titre</h1><p>$texte</p></div>";
+	else return "<div class=\"livredor-comment $id $id_users\"><h1>$titre</h1><button type=\"submit\" name=\"action\" value=\"delComment\">x</button><p>$texte</p></div>";
+
+}
+
+function mkficheUser($utilisateur)
+{
+	$iduser=$utilisateur["id"];
+	$mailuser=$utilisateur["mail"];
+	$phoneuser=$utilisateur["telephone"];
+	$nomuser=$utilisateur["nom"];
+	$prenomuser=$utilisateur["prenom"];
+	return "<div class=\"ficheUser\" id=\"$iduser\"><p>Nom :$nomuser</p><p>prenom :$prenomuser</p><p>mail :$mailuser</p><p>telephone :$phoneuser</p></div><br>";
+
 }
 ?>

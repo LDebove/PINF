@@ -88,4 +88,15 @@ function verifUserAdmin($id)
 	else return false;
 }
 
+function getCom()
+{
+	$SQL = "SELECT * FROM livre_or";
+	return parcoursRs(SQLSelect($SQL));
+}
+
+function getUser()
+{
+    $SQL = "SELECT * FROM users WHERE admin=0";
+    return parcoursRs(SQLSelect($SQL));
+}
 ?>

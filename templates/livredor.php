@@ -7,7 +7,17 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
 ?>
 
 <div class="page-content">
-<?php
-	print_r(verifUserBdd("admin","a"));
-?>
+	<div class="reply">
+		
+	</div>
+	<div class="livredor-comments">
+		<?php
+		foreach(getCom() as $commentaire){
+			if(valider("admin","SESSION")){
+				echo mkLivredor($commentaire, 1);
+			}
+			else echo mkLivredor($commentaire);
+		}
+		?>
+	</div>
 </div>
