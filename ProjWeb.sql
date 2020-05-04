@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  localhost:3306
--- Généré le :  Sam 25 Avril 2020 à 15:05
+-- Généré le :  Lun 04 Mai 2020 à 16:26
 -- Version du serveur :  5.7.29-0ubuntu0.18.04.1
 -- Version de PHP :  7.2.24-0ubuntu0.18.04.4
 
@@ -19,6 +19,7 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `pinf`
 --
+
 DROP DATABASE IF EXISTS pinf;
 CREATE DATABASE pinf;
 
@@ -44,10 +45,19 @@ CREATE TABLE `disponibilite` (
 CREATE TABLE `livre_or` (
   `id` int(11) NOT NULL COMMENT 'clé primaire, identifiant numérique auto incrémenté',
   `id_users` int(11) NOT NULL COMMENT 'l id du client du commentaire',
-  `date` date NOT NULL COMMENT 'date du commentaire',
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'date du commentaire',
   `titre` varchar(50) CHARACTER SET latin1 NOT NULL COMMENT 'titre du commentaire fait par le client',
   `texte` varchar(500) CHARACTER SET latin1 NOT NULL COMMENT 'texte du commentaire fait par le client'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `livre_or`
+--
+
+INSERT INTO `livre_or` (`id`, `id_users`, `date`, `titre`, `texte`) VALUES
+(23, 1, '2020-05-04 14:16:15', 'test 1', '1'),
+(26, 1, '2020-05-04 14:16:47', 'test 3', '3'),
+(28, 1, '2020-05-04 14:17:21', 'test 5', '5');
 
 -- --------------------------------------------------------
 
@@ -73,11 +83,11 @@ CREATE TABLE `users` (
   `login` varchar(20) CHARACTER SET latin1 NOT NULL COMMENT 'identifiant',
   `passe` varchar(20) CHARACTER SET latin1 NOT NULL COMMENT 'mot de passe',
   `mail` varchar(60) CHARACTER SET latin1 NOT NULL COMMENT 'mail',
-  `telephone` varchar(12) CHARACTER SET latin1 COMMENT 'téléphone',
-  `nom` varchar(20) CHARACTER SET latin1 COMMENT 'nom',
-  `prenom` varchar(20) CHARACTER SET latin1 COMMENT 'prenom',
+  `telephone` varchar(12) CHARACTER SET latin1 NOT NULL COMMENT 'téléphone',
+  `nom` varchar(20) CHARACTER SET latin1 NOT NULL COMMENT 'nom',
+  `prenom` varchar(20) CHARACTER SET latin1 NOT NULL COMMENT 'prenom',
   `admin` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'indique si l utilisateur est un administrateur',
-  `blacklist` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'indique si l utilisateur est blacklisté'
+  `blacklist` tinyint(1) DEFAULT '0' COMMENT 'indique si l utilisateur est blacklisté'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -86,8 +96,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `login`, `passe`, `mail`, `telephone`, `nom`, `prenom`, `admin`, `blacklist`) VALUES
 (1, 'admin', 'admin', 'web.menuiseriedunord@gmail.com', '0609335551', 'Benouahlima', 'Monsieur', 1, 0),
-(2, 'Piero', 'Manzoni', 'pinf.hyperion.hotmail.com', NULL, 'de Saint-Meleuc', 'Pierre', 0, 0);
-
+(2, 'Piero', 'Manzoni', 'pinf.hyperion.hotmail.com', '', 'de Saint-Meleuc', 'Pierre', 0, 0);
 
 --
 -- Index pour les tables exportées
@@ -128,12 +137,12 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `disponibilite`
 --
 ALTER TABLE `disponibilite`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'clé primaire, identifiant numérique auto incrémenté', AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'clé primaire, identifiant numérique auto incrémenté', AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT pour la table `livre_or`
 --
 ALTER TABLE `livre_or`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'clé primaire, identifiant numérique auto incrémenté', AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'clé primaire, identifiant numérique auto incrémenté', AUTO_INCREMENT=29;
 --
 -- AUTO_INCREMENT pour la table `rendez_vous`
 --
@@ -143,7 +152,7 @@ ALTER TABLE `rendez_vous`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'clé primaire, identifiant numérique auto incrémenté', AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'clé primaire, identifiant numérique auto incrémenté', AUTO_INCREMENT=11;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

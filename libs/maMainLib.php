@@ -21,10 +21,10 @@ function mkLivredor($commentaire, $admin=0)
 	$date=$commentaire["date"];
 	$titre=$commentaire["titre"];
 	$texte=$commentaire["texte"];
-	$login=getNameFromId($id);
+	$login=getNameFromId($id_users);
 
 	if($admin==0) return "<div class=\"livredor-comment\"><h2>$login</h2><h1>$titre</h1><p>$texte</p></div>";
-	else return "<div class=\"livredor-comment\"><h2>$login</h2><h1>$titre</h1><form role=\"form\" action=\"controleur.php\"><input type=\"hidden\" name=\"idComment\" value=\"$id\"/><button type=\"submit\" name=\"action\" value=\"delComment\">x</button></form<p>$texte</p></div>";
+	else return "<div class=\"livredor-comment\"><h2>$login</h2><h1>$titre</h1><form role=\"form\" action=\"controleur.php\"><input type=\"hidden\" name=\"idComment\" value=\"$id\"/><button type=\"submit\" name=\"action\" value=\"delComment\">x</button></form><p>$texte</p></div>";
 
 }
 
@@ -65,6 +65,6 @@ function mkficheUser($utilisateur)
 
 function mkReply()
 {
-	return "<input name=\"titre\" form=\"form-reply\"></input><textarea name=\"comment\" form=\"form-reply\"></textarea><form role=\"form\" action=\"controleur.php\" id=\"form-reply\"><button type=\"submit\" name=\"action\" value=\"sendComment\">Envoyer</button></form>";
+	return "<label for=\"titre\">Titre : </label><input name=\"titre\" form=\"form-reply\"></input><textarea name=\"comment\" form=\"form-reply\"></textarea><form role=\"form\" action=\"controleur.php\" id=\"form-reply\"><button type=\"submit\" name=\"action\" value=\"sendComment\">Envoyer</button></form>";
 }
 ?>

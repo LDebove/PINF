@@ -119,9 +119,9 @@ function deleteComment($idcomment)
 	return SQLDelete($SQL);
 }
 
-function sendComment($id,$date,$titre,$texte)
+function sendComment($id,$titre,$texte)
 {
-	$SQL = "INSERT INTO livre_or(id_users,date,titre,texte) VALUES($id,'$date','$titre','$texte');";
+	$SQL = "INSERT INTO livre_or(id_users,titre,texte) VALUES($id,'$titre','$texte');";
 	return SQLInsert($SQL);
 }
 ?>

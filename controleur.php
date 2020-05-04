@@ -159,11 +159,10 @@ if ($action = valider("action"))
 				case 'sendComment';
 				//récup les data ci-dessous
 				$id=verifUserBdd($_SESSION["login"],$_SESSION["passe"]);
-				$date=date("Y/m/d");
 				$titre=valider("titre");
 				$texte=valider("comment");
 
-				sendComment($id,$date,$titre,$texte);
+				sendComment($id,$titre,$texte);
 				header("Location:./index.php?view=livredor");
 				die("");
 				break;
