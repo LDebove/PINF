@@ -36,11 +36,14 @@ footer {
 	width: 100%;
 	bottom: 0;
 	background: #135283;
-
 }
 
 h1, h2, h3, h4, h5, h6 {
 	font-size: 22px;
+}
+
+textarea {
+	resize: none;
 }
 /*SMALL SCREEN*/
 @media screen and (max-width: 600px) {
@@ -422,6 +425,8 @@ h1, h2, h3, h4, h5, h6 {
 	top: 0;
 	right: 0;
 }
+
+
 
 .ficheUser {
     position: relative;

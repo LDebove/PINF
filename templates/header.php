@@ -7,7 +7,7 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
 ?>
 
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="fr">
 <head>
 	<meta charset="UTF-8">
 	<meta name="description" content="Site Web d'un artisan"/>

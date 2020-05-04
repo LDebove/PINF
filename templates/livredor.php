@@ -8,7 +8,11 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
 
 <div class="page-content">
 	<div class="reply">
-		
+		<?php
+		if(valider("connecte","SESSION") && !valider("blacklist","SESSION")){
+			echo mkReply();
+		}
+		?>
 	</div>
 	<div class="livredor-comments">
 		<?php

@@ -62,4 +62,9 @@ function mkficheUser($utilisateur)
             </div><br>";
     }
 }
+
+function mkReply()
+{
+	return "<input name=\"titre\" form=\"form-reply\"></input><textarea name=\"comment\" form=\"form-reply\"></textarea><form role=\"form\" action=\"controleur.php\" id=\"form-reply\"><button type=\"submit\" name=\"action\" value=\"sendComment\">Envoyer</button></form>";
+}
 ?>

@@ -90,7 +90,7 @@ function verifUserAdmin($id)
 
 function getCom()
 {
-	$SQL = "SELECT L.id, L.id_users, L.date, L.titre, L.texte FROM livre_or L, users U WHERE U.blacklist=0 AND L.id_users=U.id";
+	$SQL = "SELECT L.id, L.id_users, L.date, L.titre, L.texte FROM livre_or L, users U WHERE U.blacklist=0 AND L.id_users=U.id ORDER BY L.date DESC ";
 	return parcoursRs(SQLSelect($SQL));
 }
 
@@ -117,5 +117,11 @@ function deleteComment($idcomment)
 {
 	$SQL = "DELETE FROM livre_or WHERE id=$idcomment";
 	return SQLDelete($SQL);
+}
+
+function sendComment($id,$date,$titre,$texte)
+{
+	$SQL = "INSERT INTO livre_or(id_users,date,titre,texte) VALUES($id,'$date','$titre','$texte');";
+	return SQLInsert($SQL);
 }
 ?>

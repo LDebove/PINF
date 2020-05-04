@@ -155,7 +155,19 @@ if ($action = valider("action"))
 				header("Location:./index.php?view=gestionUtilisateur");
 				die("");
 				break;
-				
+
+				case 'sendComment';
+				//récup les data ci-dessous
+				$id=verifUserBdd($_SESSION["login"],$_SESSION["passe"]);
+				$date=date("Y/m/d");
+				$titre=valider("titre");
+				$texte=valider("comment");
+
+				sendComment($id,$date,$titre,$texte);
+				header("Location:./index.php?view=livredor");
+				die("");
+				break;
+
 				default:
 				break;
 
