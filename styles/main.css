@@ -9,7 +9,6 @@ html {
 }
 
 body {
-	margin: 0;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
 	font-size: 1rem;
@@ -20,6 +19,7 @@ body {
 	background-color: #fff;
 	position: relative;
 	min-height: 100%;
+	width: auto;
 	margin: 0;
 	padding: 0;
 }
@@ -28,6 +28,8 @@ header {
 	background: #135283;
 	text-transform: uppercase;
 	position: relative;
+	border-bottom: 3px #0265b1 solid;
+	margin-bottom: 25px;
 }
 
 footer {
@@ -36,6 +38,7 @@ footer {
 	width: 100%;
 	bottom: 0;
 	background: #135283;
+	border-top: 3px #0265b1 solid;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -46,12 +49,8 @@ textarea {
 	resize: none;
 }
 
-#myTopMenu {
-	z-index: 1;
-}
-
 /*SMALL SCREEN*/
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
 	header {
 		height: 60px;
 		min-width: 267px;
@@ -81,10 +80,16 @@ textarea {
 	.topMenu a {
 		background: #135283;
 	}
+	#myTopMenu {
+		z-index: 1;
+	}
+	.signin, .signup {
+		width: 70%;
+	}
 }
 
 /*BIG SCREEN*/
-@media screen and (min-width: 601px) {
+@media screen and (min-width: 769px) {
 	header {
 		height: 150px;
 		display: flex;
@@ -146,12 +151,15 @@ textarea {
 	.contact {
 		margin-top: 60px;
 	}
+	.signin, .signup {
+		width: 500px;
+	}
 }
 
 .page-content {
 	position: relative;
 	padding-bottom: 95px;
-	min-width: 349px;
+	min-width: 384px;
 }
 
 .page-header {
@@ -189,7 +197,7 @@ textarea {
 	display: none;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
 	.topMenu a {display: none;}
 	.topMenu a.icon {
 		float: right;
@@ -198,7 +206,7 @@ textarea {
 }
 
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
 	.topMenu.responsive {position: relative;}
 	.topMenu.responsive a.icon {
 		position: absolute;
@@ -350,7 +358,7 @@ textarea {
 .prestations {
 	position: relative;
 	width: 50%;
-	margin: 25px auto;
+	margin: 0 auto;
 	padding: 3%;
 	border: 3px  #444444 solid;
 	background-color: #2f2f2f;
@@ -378,7 +386,6 @@ textarea {
 	display: block;
 	padding: 5px;
 	margin: 0 auto;
-	width: 500px;
 	border: 3px  #444444 solid;
 	background-color: #2f2f2f;
 	color: rgb(255,255,255,0.7);
@@ -460,20 +467,20 @@ textarea {
 }
 
 .ficheUser {
-    position: relative;
-    display: block;
-    border: 3px  #444444 solid;
-    background-color: #2f2f2f;
-    color: rgb(255,255,255,0.7);
-    margin: 0 auto;
-    margin-bottom: 10px;
-    width: 50%;
-    padding: 5px;
+	position: relative;
+	display: block;
+	border: 3px  #444444 solid;
+	background-color: #2f2f2f;
+	color: rgb(255,255,255,0.7);
+	margin: 0 auto;
+	margin-bottom: 10px;
+	width: 50%;
+	padding: 5px;
 }
 
 #textpresta {
-    width: 100%;
-    height: 10em;
+	width: 100%;
+	height: 10em;
 }
 
 

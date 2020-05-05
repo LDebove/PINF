@@ -124,4 +124,16 @@ function sendComment($id,$titre,$texte)
 	$SQL = "INSERT INTO livre_or(id_users,titre,texte) VALUES($id,'$titre','$texte');";
 	return SQLInsert($SQL);
 }
+
+function getPrestations()
+{
+	$SQL = "SELECT `path`, `texte` FROM prestations";
+	return parcoursRs(SQLSelect($SQL));
+}
+
+function addPrestation($path="", $texte)
+{
+	$SQL ="INSERT INTO prestations(`path`,`texte`) VALUES('$path','$texte')";
+	return SQLInsert($SQL);
+}
 ?>

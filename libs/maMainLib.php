@@ -6,12 +6,12 @@ function mkHeadLink($label, $view, $currentView="", $class="")
 	return "<a href=\"index.php?view=$view\" class=\"$class\">$label</a>";
 }
 
-function mkPrestation($file, $alt="image", $folder="images")
+function mkPrestation($prestation)
 {
-	$url = $folder;
-	$url .= "/";
-	$url .= $file;
-	return "<div class=\"prestation\"><img src=\"$url\" alt=\"$alt\"><p>$alt</p></div>";
+	$path=$prestation["path"];
+    $texte=$prestation["texte"];
+    if($path!="") return "<div class=\"prestation\"><img src=\"$path\"><p>$texte</p></div>";
+    else return "<div class=\"prestation\"><p>$texte</p></div>";
 }
 
 function mkLivredor($commentaire, $admin=0)
@@ -65,6 +65,11 @@ function mkficheUser($utilisateur)
 
 function mkReply()
 {
-	return "<label for=\"titre\">Titre : </label><input name=\"titre\" form=\"form-reply\"></input><textarea name=\"comment\" form=\"form-reply\"></textarea><form role=\"form\" action=\"controleur.php\" id=\"form-reply\"><button type=\"submit\" name=\"action\" value=\"sendComment\">Envoyer</button></form>";
+	return "<div class=\"reply\"><label for=\"titre\">Titre : </label><input name=\"titre\" form=\"form-reply\"></input><textarea name=\"comment\" form=\"form-reply\"></textarea><form role=\"form\" action=\"controleur.php\" id=\"form-reply\"><button type=\"submit\" name=\"action\" value=\"sendComment\">Envoyer</button></form></div>";
+}
+
+function mkPostPrestation()
+{
+    return "<form role=\"form\" action=\"controleur.php\" method=\"post\" enctype=\"multipart/form-data\">Selectionner une image à upload: <input type=\"file\" name=\"file\" id=\"fileAUpload\"><br><textarea name=\"texte\" id=\"textpresta\" placeholder=\"Décrire la prestation ici:\"></textarea><button type=\"submit\" name=\"action\" value=\"enregistrerImage\">Envoyer</button></form>";
 }
 ?>

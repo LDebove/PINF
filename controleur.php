@@ -156,14 +156,45 @@ if ($action = valider("action"))
 				die("");
 				break;
 
-				case 'sendComment';
-				//récup les data ci-dessous
+				case 'sendComment':
 				$id=verifUserBdd($_SESSION["login"],$_SESSION["passe"]);
 				$titre=valider("titre");
 				$texte=valider("comment");
 
 				sendComment($id,$titre,$texte);
 				header("Location:./index.php?view=livredor");
+				die("");
+				break;
+
+				case "enregistrerImage":
+				$path="images/";
+				$texte=valider("texte");
+				if(isset($_FILES["file"])){
+					$image=$_FILES["file"]["name"];
+					$path.=$image;
+					addPrestation($path, $texte);
+				}
+				else{
+					addPrestation("", $texte);
+				}
+				if(isset($_FILES["file"]) && $_FILES["file"]["error"] == 0){
+					$allowed = array("jpg" => "image/jpg", "jpeg" => "image/jpeg", "gif" => "image/gif", "png" => "image/png");
+					$filename = $_FILES["file"]["name"];
+					$filetype = $_FILES["file"]["type"];
+					$filesize = $_FILES["file"]["size"];
+
+					$ext = pathinfo($filename, PATHINFO_EXTENSION);
+					if(!array_key_exists($ext, $allowed)) die("");
+					$maxsize = 5 * 1024 * 1024;
+					if($filesize > $maxsize) die("");
+					if(in_array($filetype, $allowed)){
+						if(!file_exists("images/" . $filename)){
+							move_uploaded_file($_FILES["file"]["tmp_name"], "images/" . $filename);
+						} 
+					}
+				}
+
+				header("Location:./index.php?view=prestations");
 				die("");
 				break;
 

@@ -11,6 +11,7 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
 <head>
 	<meta charset="UTF-8">
 	<meta name="description" content="Site Web d'un artisan"/>
+	<meta name="viewport" content="width=device-width">
 	<title>Menuiserie du Nord</title>
 	<link href="styles/jquery-ui.min.css" rel="stylesheet">
 	<link href="styles/main.css" rel="stylesheet">
