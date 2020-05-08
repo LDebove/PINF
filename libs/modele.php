@@ -142,4 +142,28 @@ function delPrestation($path, $texte)
 	$SQL ="DELETE FROM prestations WHERE `path`='$path' AND `texte`='$texte'";
 	return SQLDelete($SQL);
 }
+
+function delUser($id)
+{
+    $SQL ="DELETE FROM users WHERE id=$id";
+    return SQLDelete($SQL);
+}
+
+function delUserRDV($id)
+{
+    $SQL ="DELETE FROM rendez_vous WHERE id_users=$id";
+    return SQLDelete($SQL);
+}
+
+function delUserLivredor($id)
+{
+    $SQL ="DELETE FROM livre_or WHERE id_users=$id";
+    return SQLDelete($SQL);
+}
+
+function updateUser($id,$passe,$telephone,$nom,$prenom)
+{
+    $SQL ="UPDATE users SET passe=$passe, telephone=$telephone, nom=$nom, prenom=$prenom WHERE id=$id";
+    SQLUpdate($SQL);
+}
 ?>
