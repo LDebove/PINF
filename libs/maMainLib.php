@@ -52,7 +52,9 @@ function mkficheUser($utilisateur)
                 <form role=\"form\" action=\"controleur.php\">
                     <input type = \"hidden\" name = \"IDaBlack\" value = \"$iduser\" />
                     <button type=\"submit\" name=\"action\" value=\"Blacklister\">Bloquer la personne</button>
+                    <button type=\"submit\" name=\"action\" value=\"delUser\">Supprimer la personne</button>
                 </form>
+
             </div><br>";
     }else{
             return "<div class=\"ficheUser\" id=\"$iduser\">
@@ -64,6 +66,7 @@ function mkficheUser($utilisateur)
                 <form role=\"form\" action=\"controleur.php\">
                     <input type = \"hidden\" name = \"IDAut\" value = \"$iduser\" />
                     <button type=\"submit\" name=\"action\" value=\"Autoriser\">Debloquer la personne</button>
+                    <button type=\"submit\" name=\"action\" value=\"delUser\">Supprimer la personne</button>
                 </form>
             </div><br>";
     }

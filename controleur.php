@@ -198,18 +198,16 @@ if ($action = valider("action"))
 				die("");
 				break;
 
-				case "delPrestation" :
-				$path=valider("pathPrestation");
-				$texte=valider("textePrestation");
-
-				if($path!="images/"){
-					unlink($path);
-				}
-				delPrestation($path, $texte);
-
-				header("Location:./index.php?view=prestations");
+				case "delUser" :
+				$id4=valider("IDSup");
+				delUserRDV($id4);
+				delUserLivredor($id4);
+				delUser($id4);
+				header("Location:./index.php?view=acceuil");
 				die("");
 				break;
+
+
 
 				default:
 				break;
