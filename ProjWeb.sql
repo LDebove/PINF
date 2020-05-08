@@ -50,14 +50,24 @@ CREATE TABLE `livre_or` (
   `texte` varchar(500) CHARACTER SET latin1 NOT NULL COMMENT 'texte du commentaire fait par le client'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
 --
--- Contenu de la table `livre_or`
+-- Structure de la table `prestations`
 --
 
-INSERT INTO `livre_or` (`id`, `id_users`, `date`, `titre`, `texte`) VALUES
-(23, 1, '2020-05-04 14:16:15', 'test 1', '1'),
-(26, 1, '2020-05-04 14:16:47', 'test 3', '3'),
-(28, 1, '2020-05-04 14:17:21', 'test 5', '5');
+CREATE TABLE `prestations` (
+  `id` int(11) NOT NULL,
+  `path` varchar(100) NOT NULL,
+  `texte` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `prestations`
+--
+
+INSERT INTO `prestations` (`id`, `path`, `texte`) VALUES
+(1, 'images/amazon.jpg', 'TEST 1');
 
 -- --------------------------------------------------------
 
@@ -116,6 +126,12 @@ ALTER TABLE `livre_or`
   ADD KEY `livre_or_users_1` (`id_users`);
 
 --
+-- Index pour la table `prestations`
+--
+ALTER TABLE `prestations`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `rendez_vous`
 --
 ALTER TABLE `rendez_vous`
@@ -143,6 +159,11 @@ ALTER TABLE `disponibilite`
 --
 ALTER TABLE `livre_or`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'clé primaire, identifiant numérique auto incrémenté', AUTO_INCREMENT=29;
+--
+-- AUTO_INCREMENT pour la table `prestations`
+--
+ALTER TABLE `prestations`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT pour la table `rendez_vous`
 --
