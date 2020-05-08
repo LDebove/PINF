@@ -367,6 +367,7 @@ textarea {
 }
 
 .prestation {
+	position: relative;
 	max-width: 100%;
 	margin-bottom: 50px;
 	min-width: 200px;
@@ -483,7 +484,11 @@ textarea {
 	height: 10em;
 }
 
-
+.prestation button {
+	position: absolute;
+	display: block;
+	right: 0;
+}
 
 
 

@@ -6,12 +6,18 @@ function mkHeadLink($label, $view, $currentView="", $class="")
 	return "<a href=\"index.php?view=$view\" class=\"$class\">$label</a>";
 }
 
-function mkPrestation($prestation)
+function mkPrestation($prestation,$admin=0)
 {
 	$path=$prestation["path"];
     $texte=$prestation["texte"];
-    if($path!="") return "<div class=\"prestation\"><img src=\"$path\"><p>$texte</p></div>";
-    else return "<div class=\"prestation\"><p>$texte</p></div>";
+    if($admin==0){
+        if($path!="images/") return "<div class=\"prestation\"><img src=\"$path\"><p>$texte</p></div>";
+        else return "<div class=\"prestation\"><p>$texte</p></div>";
+    }
+    else{
+        if($path!="images/") return "<div class=\"prestation\"><form role=\"form\" action=\"controleur.php\"><input type=\"hidden\" name=\"pathPrestation\" value=\"$path\"/><input type=\"hidden\" name=\"textePrestation\" value=\"$texte\"/><button type=\"submit\" name=\"action\" value=\"delPrestation\">x</button></form><img src=\"$path\"><p>$texte</p></div>";
+        else return "<div class=\"prestation\"><form role=\"form\" action=\"controleur.php\"><input type=\"hidden\" name=\"pathPrestation\" value=\"$path\"/><input type=\"hidden\" name=\"textePrestation\" value=\"$texte\"/><button type=\"submit\" name=\"action\" value=\"delPrestation\">x</button></form><p>$texte</p></div>";
+    }
 }
 
 function mkLivredor($commentaire, $admin=0)

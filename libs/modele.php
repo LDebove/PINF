@@ -136,4 +136,10 @@ function addPrestation($path="", $texte)
 	$SQL ="INSERT INTO prestations(`path`,`texte`) VALUES('$path','$texte')";
 	return SQLInsert($SQL);
 }
+
+function delPrestation($path, $texte)
+{
+	$SQL ="DELETE FROM prestations WHERE `path`='$path' AND `texte`='$texte'";
+	return SQLDelete($SQL);
+}
 ?>

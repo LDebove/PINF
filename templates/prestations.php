@@ -8,15 +8,22 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
 
 <div class="page-content">
     <div class="prestations">
-    <?php
-    foreach(getPrestations() as $prestation){
-        echo mkPrestation($prestation);
-    }
-    ?>
-    <?php
-    if (valider("admin","SESSION")) {
-        echo mkPostPrestation();
-    }
-    ?>
+        <?php
+        if(valider("admin","SESSION")){
+            foreach(getPrestations() as $prestation){
+                echo mkPrestation($prestation,1);
+            }
+        }
+        else{
+            foreach(getPrestations() as $prestation){
+                echo mkPrestation($prestation);
+            } 
+        }
+        ?>
+        <?php
+        if (valider("admin","SESSION")) {
+            echo mkPostPrestation();
+        }
+        ?>
     </div>
 </div>
