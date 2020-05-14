@@ -73,7 +73,11 @@ function resetTimer(){
 	clearInterval(timer);
 	timer = setInterval(nextImage, 10000);
 }
-/*
-function signupError(){
-	$(".signup>form #login");
-}*/
+
+function popupConfirm(){
+	$(".popupConfirm").show();
+}
+
+function popoutConfirm(){
+	$(".popupConfirm").hide();
+}

@@ -106,6 +106,12 @@ function getNameFromId($id)
 	return SQLGetChamp($SQL);
 }
 
+function getIdFromLogin($login)
+{
+	$SQL = "SELECT id FROM users WHERE login=$login";
+	return SQLGetChamp($SQL);
+}
+
 function verifUserBlacklist($id)
 {
 	$SQL = "SELECT blacklist FROM users WHERE id = $id";
@@ -161,9 +167,15 @@ function delUserLivredor($id)
     return SQLDelete($SQL);
 }
 
+function getDataUser($id)
+{
+	$SQL = "SELECT * FROM users WHERE id=$id";
+	return parcoursRs(SQLSelect($SQL));
+}
+
 function updateUser($id,$passe,$telephone,$nom,$prenom)
 {
-    $SQL ="UPDATE users SET passe=$passe, telephone=$telephone, nom=$nom, prenom=$prenom WHERE id=$id";
+    $SQL ="UPDATE users SET passe='$passe', telephone='$telephone', nom='$nom', prenom='$prenom' WHERE id=$id";
     SQLUpdate($SQL);
 }
 ?>

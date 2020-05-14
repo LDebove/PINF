@@ -29,8 +29,8 @@ function mkLivredor($commentaire, $admin=0)
 	$texte=$commentaire["texte"];
 	$login=getNameFromId($id_users);
 
-	if($admin==0) return "<div class=\"livredor-comment\"><h2>$login</h2><h1>$titre</h1><p>$texte</p></div>";
-	else return "<div class=\"livredor-comment\"><h2>$login</h2><h1>$titre</h1><form role=\"form\" action=\"controleur.php\"><input type=\"hidden\" name=\"idComment\" value=\"$id\"/><button type=\"submit\" name=\"action\" value=\"delComment\">x</button></form><p>$texte</p></div>";
+	if($admin==0) return "<div class=\"livredor-comment\"><h1>$login</h1><h1>$titre</h1><p>$texte</p></div>";
+	else return "<div class=\"livredor-comment\"><h1>$login</h1><h1>$titre</h1><form role=\"form\" action=\"controleur.php\"><input type=\"hidden\" name=\"idComment\" value=\"$id\"/><button type=\"submit\" class=\"button\" name=\"action\" value=\"delComment\">x</button></form><p>$texte</p></div>";
 
 }
 
@@ -43,42 +43,31 @@ function mkficheUser($utilisateur)
     $prenomuser=$utilisateur["prenom"];
     $loginuser=$utilisateur["login"];
     if($utilisateur["blacklist"]==0){
-            return "<div class=\"ficheUser\" id=\"$iduser\">
-                <p>Login :$loginuser</p>
-                <p>Nom :$nomuser</p>
-                <p>prenom :$prenomuser</p>
-                <p>mail :$mailuser</p>
-                <p>telephone :$phoneuser</p>
-                <form role=\"form\" action=\"controleur.php\">
-                    <input type = \"hidden\" name = \"IDaBlack\" value = \"$iduser\" />
-                    <button type=\"submit\" name=\"action\" value=\"Blacklister\">Bloquer la personne</button>
-                    <button type=\"submit\" name=\"action\" value=\"delUser\">Supprimer la personne</button>
-                </form>
-
-            </div><br>";
+            return "<div class=\"ficheUser\" id=\"$iduser\"><p>Login :$loginuser</p><p>Nom :$nomuser</p><p>prenom :$prenomuser</p><p>mail :$mailuser</p><p>telephone :$phoneuser</p><form role=\"form\" action=\"controleur.php\"><input type = \"hidden\" name = \"id\" value = \"$iduser\" /><button type=\"submit\" name=\"action\" value=\"Blacklister\">Bloquer l'utilisateur</button><button type=\"button\" class=\"btn btn-default\" onclick=\"popupConfirm();\">Supprimer l'utilisateur</button><p><div class=\"popupConfirm\">Confirmer ? <button type=\"submit\" name=\"action\" value=\"delUser\" class=\"btn btn-default\">Oui</button><button type=\"button\" class=\"btn btn-default\" onclick=\"popoutConfirm();\">Annuler</button></div></form></div><br>";
     }else{
-            return "<div class=\"ficheUser\" id=\"$iduser\">
-                <p>Login :$loginuser</p>
-                <p>Nom :$nomuser</p>
-                <p>prenom :$prenomuser</p>
-                <p>mail :$mailuser</p>
-                <p>telephone :$phoneuser</p>
-                <form role=\"form\" action=\"controleur.php\">
-                    <input type = \"hidden\" name = \"IDAut\" value = \"$iduser\" />
-                    <button type=\"submit\" name=\"action\" value=\"Autoriser\">Debloquer la personne</button>
-                    <button type=\"submit\" name=\"action\" value=\"delUser\">Supprimer la personne</button>
-                </form>
-            </div><br>";
+            return "<div class=\"ficheUser\" id=\"$iduser\"><p>Login :$loginuser</p><p>Nom :$nomuser</p><p>prenom :$prenomuser</p><p>mail :$mailuser</p><p>telephone :$phoneuser</p><form role=\"form\" action=\"controleur.php\"><input type = \"hidden\" name = \"id\" value = \"$iduser\" /><button type=\"submit\" name=\"action\" value=\"Autoriser\">Debloquer l'utilisateur</button><button type=\"button\" class=\"btn btn-default\" onclick=\"popupConfirm();\">Supprimer l'utilisateur</button><p><div class=\"popupConfirm\">Confirmer ? <button type=\"submit\" name=\"action\" value=\"delUser\" class=\"btn btn-default\">Oui</button><button type=\"button\" class=\"btn btn-default\" onclick=\"popoutConfirm();\">Annuler</button></div></form></div><br>";
     }
 }
 
+
 function mkReply()
 {
-	return "<div class=\"reply\"><label for=\"titre\">Titre : </label><input name=\"titre\" form=\"form-reply\"></input><textarea name=\"comment\" form=\"form-reply\"></textarea><form role=\"form\" action=\"controleur.php\" id=\"form-reply\"><button type=\"submit\" name=\"action\" value=\"sendComment\">Envoyer</button></form></div>";
+	return "<div class=\"reply\"><label for=\"titre\">Titre : </label><input name=\"titre\" form=\"form-reply\"></input><textarea name=\"comment\" form=\"form-reply\"></textarea><form role=\"form\" action=\"controleur.php\" id=\"form-reply\"><button type=\"submit\" class=\"button\" name=\"action\" value=\"sendComment\">Envoyer</button></form></div>";
 }
 
 function mkPostPrestation()
 {
     return "<form role=\"form\" action=\"controleur.php\" method=\"post\" enctype=\"multipart/form-data\">Selectionner une image à upload: <input type=\"file\" name=\"file\" id=\"fileAUpload\"><br><textarea name=\"texte\" id=\"textpresta\" placeholder=\"Décrire la prestation ici:\"></textarea><button type=\"submit\" name=\"action\" value=\"enregistrerImage\">Envoyer</button></form>";
 }
+
+function formUpdateUser($data)
+{
+    $login=$data[0]["login"];
+    $telephone=$data[0]["telephone"];
+    $nom=$data[0]["nom"];
+    $prenom=$data[0]["prenom"];
+
+    return "<form role=\"form\" action=\"controleur.php\"><p class=\"form-group\"><label for=\"pwd\">Mot de Passe :</label><input type=\"password\" class=\"form-control\" id=\"pwd\" name=\"passe1\"></p><p class=\"form-group\"><label for=\"confirmPwd\">Confirmation Mot de Passe :</label><input type=\"password\" class=\"form-control\" id=\"confirmPwd\" name=\"passe2\"></p><p class=\"form-group\"><label for=\"nom\">Nom :</label><input type=\"text\" class=\"form-control\" id=\"nom\" name=\"nom\" value=\"$nom\"></p><p class=\"form-group\"><label for=\"prenom\">Prénom :</label><input type=\"text\" class=\"form-control\" id=\"prenom\" name=\"prenom\" value=\"$prenom\"></p><p class=\"form-group\"><label for=\"telephone\">Téléphone :</label><input type=\"text\" class=\"form-control\" id=\"telephone\" name=\"telephone\" value=\"$telephone\"></p><button type=\"button\" class=\"btn btn-default\" onclick=\"popupConfirm();\">Valider les modifications</button><p><div class=\"popupConfirm\">Confirmer ? <button type=\"submit\" name=\"action\" value=\"updateUser\" class=\"btn btn-default\">Oui</button><button type=\"button\" class=\"btn btn-default\" onclick=\"popoutConfirm();\">Annuler</button></div></p></form>";
+}
 ?>
+

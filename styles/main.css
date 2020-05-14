@@ -28,8 +28,8 @@ header {
 	background: #135283;
 	text-transform: uppercase;
 	position: relative;
-	border-bottom: 3px #0265b1 solid;
 	margin-bottom: 25px;
+	border-bottom: 3px  #444444 solid;
 }
 
 footer {
@@ -38,7 +38,7 @@ footer {
 	width: 100%;
 	bottom: 0;
 	background: #135283;
-	border-top: 3px #0265b1 solid;
+	border-top: 3px  #444444 solid;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -83,18 +83,52 @@ textarea {
 	#myTopMenu {
 		z-index: 1;
 	}
-	.signin, .signup {
+	.signin, .signup, .ficheUser, .updateUser, .prestations {
 		width: 70%;
 	}
 }
 
+.button, form button {
+  background-color: #EA0000;
+  border: 1px solid #b60000;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
 /*BIG SCREEN*/
 @media screen and (min-width: 769px) {
+	body {
+		/*
+		background-image: url('../fonts/white_wood.jpg');
+		background-size: cover;
+		background-repeat: repeat-y;
+		background-position: center center;
+		*/
+	}
 	header {
 		height: 150px;
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		/*
+		background-image: url('../fonts/blue_wood.jpg');
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+		*/
+	}
+	footer {
+		/*
+		background-image: url('../fonts/blue_wood.jpg');
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+		*/
 	}
 	h2 {
 		font-size: 1.75rem;
@@ -151,8 +185,32 @@ textarea {
 	.contact {
 		margin-top: 60px;
 	}
-	.signin, .signup {
+	.signin, .signup, .ficheUser, .updateUser {
 		width: 500px;
+		/*
+		background-image: url('../fonts/red_wood.jpg');
+		background-size: cover;
+		background-repeat: repeat-y;
+		background-position: center center;
+		*/
+	}
+	.prestations {
+		width: 50%;
+		/*
+		background-image: url('../fonts/red_wood.jpg');
+		background-size: cover;
+		background-repeat: repeat-y;
+		background-position: center center;
+		*/
+	}
+
+	.reply, .livredor-comment {
+		/*
+		background-image: url('../fonts/red_wood.jpg');
+		background-size: cover;
+		background-repeat: repeat-y;
+		background-position: center center;
+		*/
 	}
 }
 
@@ -228,6 +286,10 @@ textarea {
 	width: 80%;
 	margin-right: auto;
 	margin-left: auto;
+}
+
+.contact {
+
 }
 
 .grid {
@@ -357,7 +419,6 @@ textarea {
 
 .prestations {
 	position: relative;
-	width: 50%;
 	margin: 0 auto;
 	padding: 3%;
 	border: 3px  #444444 solid;
@@ -453,9 +514,10 @@ textarea {
 }
 
 .reply button {
-	position: relative;
+	position: absolute;
 	display: block;
-	left: 0;
+	right:0;
+	bottom:0;
 }
 
 .reply textarea {
@@ -465,6 +527,7 @@ textarea {
 	left: 0;
 	width: 99%;
 	height: 150px;
+	margin-bottom: 19px;
 }
 
 .ficheUser {
@@ -475,7 +538,6 @@ textarea {
 	color: rgb(255,255,255,0.7);
 	margin: 0 auto;
 	margin-bottom: 10px;
-	width: 50%;
 	padding: 5px;
 }
 
@@ -490,9 +552,22 @@ textarea {
 	right: 0;
 }
 
+.popupConfirm {
+	display: none;
+	position: relative;
+	z-index: 1;
+}
 
-
-
+.updateUser {
+	position: relative;
+	display: block;
+	padding: 5px;
+	margin: 0 auto;
+	border: 3px  #444444 solid;
+	background-color: #2f2f2f;
+	color: rgb(255,255,255,0.7);
+	margin-top: 25px;
+}
 
 
 

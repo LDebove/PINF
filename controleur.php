@@ -44,10 +44,12 @@ if ($action = valider("action"))
 							setcookie("login",$login , time()+60*60*24*30);
 							setcookie("passe",$passe, time()+60*60*24*30);
 							setcookie("remember",true, time()+60*60*24*30);
+							$_SESSION['connecte']="1";
 						} else {
 							setcookie("login","", time()-3600);
 							setcookie("passe","", time()-3600);
 							setcookie("remember",false, time()-3600);
+							$_SESSION['connecte']="1";
 						}
 						
 						if(isset($_SESSION['erreur'])) unset($_SESSION['erreur']);
@@ -94,7 +96,7 @@ if ($action = valider("action"))
 				break;
 
 				case 'Email' :
-				if (($login = valider("login")) && ($passe1 = valider("passe1")) && ($passe2 = valider("passe2")) && ($passe1 == $passe2) && ($mail = valider("mail")) && ( preg_match ( " /[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+.[a-zA-Z]{2,4}/ " , $mail )) && ($_REQUEST['telephone']=='' || (preg_match(" /^(\+\d+(\s|-))?0\d(\s|-)?(\d{2}(\s|-)?){4}$/ ", $telephone) && $telephone = valider("telephone"))) && ($_REQUEST['nom']=='' || $nom = valider("nom")) && ($_REQUEST['prenom']=='' || $prenom = valider("prenom")) && (!verifMailExist($mail)) && (!verifUserExist($login))){
+				if (($login = valider("login")) && ($passe1 = valider("passe1")) && ($passe2 = valider("passe2")) && ($passe1 == $passe2) && ($mail = valider("mail")) && ( preg_match( " /[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+.[a-zA-Z]{2,4}/ " , $mail )) && ($_REQUEST['telephone']=='' || ($telephone = valider("telephone")))&& (preg_match(" /^0[1-9][0-9]{8}$/ ", $telephone) || $_REQUEST['telephone']=='') && ($_REQUEST['nom']=='' || $nom = valider("nom")) && ($_REQUEST['prenom']=='' || $prenom = valider("prenom")) && (!verifMailExist($mail)) && (!verifUserExist($login))){
 					$_SESSION['login']=$login;
 					$_SESSION['passe']=$passe1;
 					$_SESSION['mail']=$mail;
@@ -102,7 +104,7 @@ if ($action = valider("action"))
 					$_SESSION['nom']=$nom;
 					$_SESSION['prenom']=$prenom;
 					$_SESSION['CodeAVerif'] = MailCreationCompte($mail);
-
+					
 					if(isset($_SESSION['erreur'])) unset($_SESSION['erreur']);
 					if(isset($_SESSION['erreurMail'])) unset($_SESSION['erreurMail']);
 					if(isset($_SESSION['erreurLogin'])) unset($_SESSION['erreurLogin']);
@@ -143,16 +145,16 @@ if ($action = valider("action"))
 				break;
 
 				case 'Blacklister':
-				$id2=valider("IDaBlack");
+				$id2=valider("id");
 				interdireUtilisateur($id2);
-				header("Location:./index.php?view=gestionUtilisateur");
+				header("Location:./index.php?view=admin");
 				die("");
 				break;
 
 				case 'Autoriser':
-				$id3=valider("IDAut");
+				$id3=valider("id");
 				autoriserUtilisateur($id3);
-				header("Location:./index.php?view=gestionUtilisateur");
+				header("Location:./index.php?view=admin");
 				die("");
 				break;
 
@@ -199,14 +201,26 @@ if ($action = valider("action"))
 				break;
 
 				case "delUser" :
-				$id4=valider("IDSup");
+				$id4=valider("id");
 				delUserRDV($id4);
 				delUserLivredor($id4);
 				delUser($id4);
-				header("Location:./index.php?view=acceuil");
+				header("Location:./index.php?view=admin");
 				die("");
 				break;
 
+				case "updateUser" :
+				$login=$_SESSION["login"];
+				if (($passe1 = valider("passe1")) && ($passe2 = valider("passe2")) && ($passe1 == $passe2) && ($_REQUEST['telephone']=='' || (/*preg_match(" /^(\+\d+(\s|-))?0\d(\s|-)?(\d{2}(\s|-)?){4}$/ ", $telephone) && */$telephone = valider("telephone"))) && ($_REQUEST['nom']=='' || $nom = valider("nom")) && ($_REQUEST['prenom']=='' || $prenom = valider("prenom"))){
+					updateUser(getIdFromLogin($login),$passe1,$telephone,$nom,$prenom);
+					$_SESSION["passe"]=$passe1;
+					setcookie("login",$_SESSION['login'] , time()+60*60*24*30);
+					setcookie("passe",$_SESSION['passe'], time()+60*60*24*30);
+					$_SESSION['connecte']="1";
+				}
+				header("Location:./index.php?view=account");
+				die("");
+				break;
 
 
 				default:

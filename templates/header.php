@@ -38,7 +38,8 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
 				}
 				else{
 					echo mkHeadLink("Rendez-vous","calendrier",$view);
-					if(valider("admin","SESSION")) echo mkHeadLink("Administration","gestionUtilisateur",$view);
+					if(valider("connecte","SESSION")) echo mkHeadLink("Mon compte","account",$view);
+					if(valider("admin","SESSION")) echo mkHeadLink("Administration","admin",$view);
 					echo mkHeadLink("Se déconnecter","accueil",$view);
 				}
 				?>
