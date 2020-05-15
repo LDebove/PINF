@@ -13,7 +13,7 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
 
 	<div class="contact">
 		<div class="title">
-			<div>
+			<div style ="border-bottom: 3px solid #EA0000;">
 				<h2>Nous contacter</h2>
 			</div>
 		</div>
@@ -23,23 +23,23 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
 					<div class="column-content">
 						<h3>Menuiserie du Nord</h3>
 						<span>
-							I can't see you mama<br>But I can hardly wait<br>Ooh to touch and to feel you mama<br>Oh I just can't keep away<br>In the heat and the steam of the city<br>Oh its got me running and I just can't brake<br>So say you'll help me mama<br>Cos its getting so hard
+							<b>Téléphone :</b><br>06 09 33 55 51<br><b>Adresse Mail :</b><br>qualifrance@hotmail.fr<br><b>Adresse :</b><br>119 Rue Louis Loucheur, 59510 Hem
 						</span>
 					</div>
 				</div>
 				<div class="column column-2">
 					<div class="column-content">
-						<h3>test 2</h3>
+						<h3>Description</h3>
 						<span>
-							I can't see you mama<br>But I can hardly wait<br>Ooh to touch and to feel you mama<br>Oh I just can't keep away<br>In the heat and the steam of the city<br>Oh its got me running and I just can't brake<br>So say you'll help me mama<br>Cos its getting so hard
+							<b>Menuiserie du nord</b> est à votre<br>service pour un travail de <b>qualité</b>.<br>Nous travaillons en <b>France</b> et en<br><b>Belgique</b>.
 						</span>
 					</div>
 				</div>
 				<div class="column column-3">
 					<div class="column-content">
-						<h3>test 3</h3>
+						<h3>Informations</h3>
 						<span>
-							I can't see you mama<br>But I can hardly wait<br>Ooh to touch and to feel you mama<br>Oh I just can't keep away<br>In the heat and the steam of the city<br>Oh its got me running and I just can't brake<br>So say you'll help me mama<br>Cos its getting so hard
+							<b>Siret :</b><br>00000000000000
 						</span>
 					</div>
 				</div>
@@ -51,8 +51,8 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
 		<div class="slides">
 			<div class="slide-1 active" style="background-image: url('fonts/image-A.png');">
 				<div class="comment-1">
-					<p class="comment">"Je suis très satisfait.<br>Un travail d'artiste!"</p>
-					<p class="author">Pierre de Saint Meleuc<br>Fondateur de Google</p>
+					<p class="comment">"<br>"</p>
+					<p class="author"><br></p>
 				</div>
 				<a href="javascript:void(0);" class="carousel-button carousel-button-prev" onclick="previousImage()">
 					<img src="icons/chevron-left-solid.png" class="carousel-icon icon-left">
@@ -63,8 +63,8 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
 			</div>
 			<div class="slide-2" style="background-image: url('fonts/image-B.png');">
 				<div class="comment-2">
-					<p class="comment">"Quand je l'ai vu, je n'en ai pas cru mes yeux.<br>Surprenant et sensuel, j'adore!"</p>
-					<p class="author">Pierre de Saint Meleuc<br>PDG d'Amazon</p>
+					<p class="comment">"<br>"</p>
+					<p class="author"><br></p>
 				</div>
 				<a href="javascript:void(0);" class="carousel-button carousel-button-prev" onclick="previousImage()">
 					<img src="icons/chevron-left-solid.png" class="carousel-icon icon-left">
@@ -75,8 +75,8 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
 			</div>
 			<div class="slide-3" style="background-image: url('fonts/image-C.jpg');">
 				<div class="comment-3">
-					<p class="comment">"Je n'avais jamais pensé à un trône en bois par le passé.<br>Je n'aurai pas pu être plus satisfait!"</p>
-					<p class="author">Pierre de Saint Meleuc<br>Roi de Belgique</p>
+					<p class="comment">"<br>"</p>
+					<p class="author"><br></p>
 				</div>
 				<a href="javascript:void(0);" class="carousel-button carousel-button-prev" onclick="previousImage()">
 					<img src="icons/chevron-left-solid.png" class="carousel-icon icon-left">
