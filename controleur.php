@@ -222,6 +222,15 @@ if ($action = valider("action"))
 				die("");
 				break;
 
+				case "delPrestation":
+				$path=valider("pathPrestation");
+				$texte=valider("textePrestation");
+				delPrestation($path, $texte);
+
+				header("Location:./index.php?view=prestations");
+				die("");
+				break;
+
 
 				default:
 				break;
