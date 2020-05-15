@@ -98,6 +98,7 @@ textarea {
   font-size: 16px;
   cursor: pointer;
   margin-right: 5px;
+  padding:3px;
 }
 
 /*BIG SCREEN*/
@@ -569,146 +570,90 @@ textarea {
 	margin-top: 25px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*AMBROISE*/
 #horaire_calendrier {
-	position: relative;
-	left: 5%;
-	display: inline-block;
+  position: relative;
+  left: 5%;
+  display: inline-block;
 }
 
 #calendrier {
-	position: relative;
-	padding-left: 8.5%;
+  position: relative;
+  padding-left: 8.5%;
 } 
 
 .horaire_calendrier_p {
-	height:7px;
+  height:7px;
 }
 
 #Grille_horaire_calendrier {
-	position: relative;
-	top: 12px;
-	left: 6%;
-	display: inline-block;
+  position: relative;
+  top: 12px;
+  left: 6%;
+  display: inline-block;
 }
 
 .Grille_horaire {
-	width:200px;
-	height : 33px;
-	border-right:1px solid #848484;
-	border-top:1px solid #848484;
-	border-left:1px solid #848484;
-	background-color: #dbdbdb;
+  width:200px;
+  height : 33px;
+  border-right:1px solid #848484;
+  border-top:1px solid #848484;
+  border-left:1px solid #848484;
+  background-color: #dbdbdb;
 }
 
 .Grille_RDV {
-	position: absolute;
-	top: 40%; /*de 0% à 92%*/
-	height: 200px;
-	width:196px;
-	border-right:3px solid #666666;
-	border-top:1px solid #666666;
-	border-left:3px solid #666666;
-	border-bottom:1px solid #666666;
-	background-color: #b5b5b5;
+  position: absolute;
+  top: 40%; /*de 0% à 92%*/
+  height: 200px;
+  width:196px;
+  border:3px solid #666666;
+  background-color: #b5b5b5;
 }
 
 .Grille_RDV_dispo {
-	width:10px;
-	height :10px;
-	border-right:1px solid #848484;
-	border-top:1px solid #848484;
-	border-left:1px solid #848484;
-	border-bottom:1px solid #848484;
+  border:1px solid #848484;
+  width  : 10px;
+  height : 10px;
+  background : green;
 }
 
 .Grille_RDV_p, .Grille_RDV_dispo{
-	display: inline;
-/*
-  position: absolute;
-  left: 50%;
-  bottom: 50%;
-  transform: translate(-50%, -50%);
-  */
+  display: inline-block;
 }
 
 #demander_RDV, #modifier_RDV {
-	position: relative;
-	left: 10%;
-	border-right:1px solid #848484;
-	border-top:1px solid #848484;
-	border-left:1px solid #848484;
-	border-bottom:1px solid #848484;
-	display: none;
+  position: relative;
+  margin-left: 10%;
+  margin-top: 50px;
+  border:1px solid #848484;
+  padding: 15px;
+  display: none;
 }
 
+#div_accepter_RDV {
+  position: relative;
+  top: 12px;
+  left: 60%;
+  border:1px solid #848484;
+  display: inline-block;
+}
 
+.accepter_RDV {
+  position: relative;
+  border:1px solid #848484;
+}
 
+.ad{
+  display: none;
+}
 
-
-/*
-TODO :  -recentrer Grille_RDV(p et dispo)
-  -modifier css demander_RDV
-
-
-
-
-
-
-
-
-  */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.rendez-vous {
+	position: relative;
+	display: block;
+	border: 3px  #444444 solid;
+	background-color: #2f2f2f;
+	color: rgb(255,255,255,0.7);
+	padding: 15px;
+	width: 80%;
+	margin: 0 auto;
+}

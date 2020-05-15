@@ -59,7 +59,7 @@ function creerUserBdd($login,$passe,$nom,$prenom,$mail,$telephone,$admin=0)
 
 function listerRDV($date)
 {
-	$SQL = "SELECT `date`, `heure_depart`, `heure_fin` FROM disponibilite WHERE date='$date';";
+	$SQL = "SELECT id, `date`, `heure_depart`, `heure_fin` FROM disponibilite WHERE date='$date';";
 	return parcoursRs(SQLSelect($SQL));
 }
 
@@ -178,4 +178,145 @@ function updateUser($id,$passe,$telephone,$nom,$prenom)
     $SQL ="UPDATE users SET passe='$passe', telephone='$telephone', nom='$nom', prenom='$prenom' WHERE id=$id";
     SQLUpdate($SQL);
 }
+
+function idUSERS($login, $passe)
+{
+	$SQL = "select id from users where login='$login' and passe='$passe';";
+//	return parcoursRs(SQLSelect($SQL));
+//	return SQLSelect($SQL);
+	return parcoursRs(SQLSelect($SQL));
+}
+
+function idRDV($date, $depart)
+{
+	$SQL = "select id from disponibilite where date='$date' and heure_depart='$depart';";
+	return parcoursRs(SQLSelect($SQL));
+}
+
+function verif_demandeRDV($idusers, $idRDV)
+{
+	$SQL = "SELECT COUNT(*) FROM rendez_vous WHERE id_users='$idusers' AND id_rdv='$idRDV';";
+	return SQLGetChamp($SQL);
+}
+
+function demandeRDV($idusers, $idRDV)
+{
+	$SQL = "INSERT INTO `rendez_vous` (`id_users`, `id_rdv`, `accepte`) VALUES ('$idusers', '$idRDV', 0);";
+	return SQLInsert($SQL);
+}
+
+function affiche_demandeRDV()
+{
+	$SQL = "select `id_users`, `id_rdv` from rendez_vous, disponibilite where accepte=0 and id_rdv=disponibilite.id order by disponibilite.date, disponibilite.heure_depart;";
+	return parcoursRs(SQLSelect($SQL));
+}
+
+function selectUsers($id_users)
+{
+	$SQL = "select `nom`, `prenom` from users where id='$id_users';";
+	return parcoursRs(SQLSelect($SQL));
+}
+
+function selectRDVByID($id_rdv)
+{
+	$SQL = "SELECT `date`, `heure_depart`, `heure_fin` FROM disponibilite WHERE id='$id_rdv';";
+	return parcoursRs(SQLSelect($SQL));
+}
+
+function update_demande($id_rdv, $id_users)
+{
+	$SQL = "UPDATE rendez_vous SET accepte=1 WHERE id_users='$id_users' and id_rdv='$id_rdv';";
+	return SQLUpdate($SQL);
+}
+
+function delete_demande($id_rdv, $id_users)
+{
+	$SQL = "delete FROM rendez_vous WHERE id_users='$id_users' and id_rdv='$id_rdv';";
+	return SQLDelete($SQL);
+}
+
+function delete_demandes($id_rdv, $id_users)
+{
+	$SQL = "delete FROM rendez_vous WHERE id_users!='$id_users' and id_rdv='$id_rdv';";
+	return SQLDelete($SQL);
+}
+
+function verif_user($login, $passe)
+{
+	$SQL = "SELECT admin FROM users WHERE login='$login' AND passe='$passe';";
+	return SQLGetChamp($SQL);
+}
+
+function deleteRDV_demande($date, $depart)
+{
+	$SQL = "delete FROM rendez_vous WHERE id_rdv=(SELECT id FROM disponibilite WHERE date='$date' and heure_depart='$depart');";
+	return SQLDelete($SQL);
+}
+
+function couleur_RDV($id)
+{
+	$SQL = "SELECT accepte FROM rendez_vous WHERE id_rdv='$id';";
+	return parcoursRs(SQLSelect($SQL));
+}
+
+function get_mail($id_users)
+{
+	$SQL = "SELECT mail FROM users WHERE id='$id_users';";
+	return SQLGetChamp($SQL);
+}
+
+function selectRDV_dispo_ad($id)
+{
+	$SQL = "SELECT nom, prenom FROM users, rendez_vous WHERE rendez_vous.id_rdv='$id' and rendez_vous.accepte=1 and users.id=rendez_vous.id_users;";
+	return parcoursRs(SQLSelect($SQL));
+}
+
+function delete_demande_erreur($id_rdv, $id_users)
+{
+	$SQL = "delete FROM rendez_vous WHERE id_users='$id_users' and id_rdv='$id_rdv';";
+	return SQLDelete($SQL);
+}
+
+function verif_deja_demande($login, $passe, $id_rdv)
+{
+	$SQL = "SELECT COUNT(*) FROM rendez_vous WHERE id_users=(SELECT id FROM users WHERE login='$login' and passe='$passe') AND id_rdv='$id_rdv';";
+	return SQLGetChamp($SQL);
+}
+
+function verifRDV_client($login, $passe, $id_rdv)
+{
+	$SQL = "SELECT COUNT(*) FROM rendez_vous WHERE id_users=(SELECT id FROM users WHERE login='$login' and passe='$passe') AND id_rdv='$id_rdv' and accepte=1;";
+	return SQLGetChamp($SQL);
+}
+
+function selectDateRDVByID($id_rdv)
+{
+	$SQL = "SELECT date FROM disponibilite WHERE id=$id_rdv;";
+	return SQLGetChamp($SQL);
+}
+
+function selectDepartRDVByID($id_rdv)
+{
+	$SQL = "SELECT heure_depart FROM disponibilite WHERE id='$id_rdv';";
+	return SQLGetChamp($SQL);
+}
+
+function selectFinRDVByID($id_rdv)
+{
+	$SQL = "SELECT heure_fin FROM disponibilite WHERE id='$id_rdv';";
+	return SQLGetChamp($SQL);
+}
+
+function deleteRDV_demande_verif($date, $depart)
+{
+	$SQL = "SELECT mail FROM users WHERE id=(SELECT id_users FROM rendez_vous WHERE id_rdv=(SELECT id FROM disponibilite WHERE date='$date' and heure_depart='$depart') and accepte=1);";
+	return SQLGetChamp($SQL);
+}
+
+function selectFinRDVByDate($date, $depart)
+{
+	$SQL = "SELECT heure_fin FROM disponibilite WHERE id=(select id from disponibilite where date='$date' and heure_depart='$depart');";
+	return SQLGetChamp($SQL);
+}
+
 ?>

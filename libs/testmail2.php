@@ -8,11 +8,11 @@ require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php'; 
 require 'PHPMailer/src/SMTP.php';
 
-	function sendmail($objet, $contenu, $destinataire) {   
-	// on crée une nouvelle instance de la classe 
-	$mail = new PHPMailer(true); 
-  	// puis on l’exécute avec un 'try/catch' qui teste les erreurs d'envoi 
-  	try { 
+  function sendmail($objet, $contenu, $destinataire) {   
+  // on crée une nouvelle instance de la classe 
+  $mail = new PHPMailer(true); 
+    // puis on l’exécute avec un 'try/catch' qui teste les erreurs d'envoi 
+    try { 
     $mail -> SMTPDebug  =  2 ;     
     $mail -> isSMTP(); 
     $mail->Host = "smtp.gmail.com"; 
@@ -46,7 +46,7 @@ require 'PHPMailer/src/SMTP.php';
   }   
 } // fin de la fonction sendmail
 
-	
+  
 function MailCreationCompte($dest){
           //$fichier=fopen('deb','w');
           //fwrite($fichier, 'Dans MailCreationCompte, adresse mail :');
@@ -62,11 +62,18 @@ function MailCreationCompte($dest){
   return $NbValidation;
 }
 
-function MailValidationRDV($dest){
-  //$dest = "p.desaintmeleuc@laposte.net"; 
+function MailValidationRDV($dest,$rdv){
   $objet = "Validation de votre rendez-vous"; 
-  $contenu = "<br />'Bonjour, votre demande de rendez vous a bien été acceptée'"; 
-  $contenu .= "<br /><br />Envoyé le : ".date("d/m/Y"); 
+  $contenu = "Bonjour,<br /><br />Votre demande de rendez vous ".$rdv." a bien ete acceptee."; 
+  $contenu .= "<br /><br />Envoye le : ".date("d/m/Y"); 
+  sendmail($objet, $contenu, $dest);
+  //return $NbValidation;
+}
+
+function MailAnnulationRDV($dest,$rdv){
+  $objet = "Annulation de votre rendez-vous"; 
+  $contenu = "Bonjour,<br /><br />Votre demande de rendez vous ".$rdv." a ete annule."; 
+  $contenu .= "<br /><br />Envoye le : ".date("d/m/Y"); 
   sendmail($objet, $contenu, $dest);
   //return $NbValidation;
 }
