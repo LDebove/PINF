@@ -20,7 +20,7 @@ require 'PHPMailer/src/SMTP.php';
     $mail->SMTPSecure = 'tls';   //tls 
     $mail->SMTPAuth = true; 
     $mail->Username = "web.menuiseriedunord@gmail.com";    //Votre mail 
-    $mail->Password = "LosMenuisieros59";          //Votre mot de passe  
+    $mail->Password = "yozo_4a3ibriwruDlban";          //Votre mot de passe  
     $mail->setFrom('web.menuiseriedunord@gmail.com');           //Votre mail
     
     $mail->addAddress($destinataire, 'Clients de Mon_Domaine');        // Adresse du destinataire (le nom est facultatif) 
@@ -34,7 +34,7 @@ require 'PHPMailer/src/SMTP.php';
     $mail->isHTML(true);                                      // email au format HTML 
     $mail->Subject = utf8_decode($objet);      // Objet du message (éviter les accents là, sauf si utf8_encode) 
     $mail->Body    = $contenu;          // corps du message en HTML - Mettre des slashes si apostrophes 
-    $mail->AltBody = 'Contenu au format texte pour les clients e-mails qiui ne le supportent pas'; // ajout facultatif de texte sans balises HTML (format texte) 
+    $mail->AltBody = 'Contenu au format texte pour les clients e-mails qui ne le supportent pas'; // ajout facultatif de texte sans balises HTML (format texte) 
  
     $mail->send(); 
     echo 'Message envoyé.'; 

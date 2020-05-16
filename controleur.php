@@ -248,9 +248,9 @@ if ($action = valider("action"))
 	// On redirige vers la page index avec les bons arguments
 
 		//PAGE LOCALHOST
-		//header("Location:" . $urlBase . $qs);
+		header("Location:" . $urlBase . $qs);
 
 		//PAGE SERVEUR
-		header("Location: http://pourlepinf.zd.fr" . $urlBase . $qs);
+		//header("Location: http://pourlepinf.zd.fr" . $urlBase . $qs);
 	// On écrit seulement après cette entête
 		ob_end_flush();

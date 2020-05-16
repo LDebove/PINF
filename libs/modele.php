@@ -108,7 +108,7 @@ function getNameFromId($id)
 
 function getIdFromLogin($login)
 {
-	$SQL = "SELECT id FROM users WHERE login=$login";
+	$SQL = "SELECT id FROM users WHERE login='$login'";
 	return SQLGetChamp($SQL);
 }
 

@@ -9,11 +9,18 @@ $BDD_password=""; // pas de mot de passe
 $BDD_base="testdb_<nom>";
 */
 
+//$bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
 
 // MACHINE LINUX
 $BDD_host="localhost";
 $BDD_user="admin";
 $BDD_password="mysql";
 $BDD_base="pinf";
+
+// MACHINE LINUX 
+/*$BDD_host="localhost";
+$BDD_user="pourqwcd_MenuiserieDuNord";
+$BDD_password="mysql59VBAtest";
+$BDD_base="pourqwcd_pinf";*/
 
 ?>
