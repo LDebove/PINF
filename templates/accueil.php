@@ -49,9 +49,9 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
 
 	<div class="carousel">
 		<div class="slides">
-			<div class="slide-1 active" style="background-image: url('fonts/image-A.png');">
+			<div class="slide-1 active" style="background-image: url('fonts/image-A.jpg');">
 				<div class="comment-1">
-					<p class="comment">"<br>"</p>
+					<p class="comment">"Exemple<br>un"</p>
 					<p class="author"><br></p>
 				</div>
 				<a href="javascript:void(0);" class="carousel-button carousel-button-prev" onclick="previousImage()">
@@ -61,9 +61,9 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
 					<img src="icons/chevron-right-solid.png" class="carousel-icon icon-right">
 				</a>
 			</div>
-			<div class="slide-2" style="background-image: url('fonts/image-B.png');">
+			<div class="slide-2" style="background-image: url('fonts/image-B.jpg');">
 				<div class="comment-2">
-					<p class="comment">"<br>"</p>
+					<p class="comment">"Exemple<br>deux"</p>
 					<p class="author"><br></p>
 				</div>
 				<a href="javascript:void(0);" class="carousel-button carousel-button-prev" onclick="previousImage()">
@@ -75,7 +75,7 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
 			</div>
 			<div class="slide-3" style="background-image: url('fonts/image-C.jpg');">
 				<div class="comment-3">
-					<p class="comment">"<br>"</p>
+					<p class="comment">"Exemple<br>trois"</p>
 					<p class="author"><br></p>
 				</div>
 				<a href="javascript:void(0);" class="carousel-button carousel-button-prev" onclick="previousImage()">

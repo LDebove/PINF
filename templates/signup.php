@@ -46,7 +46,7 @@ else $login="";
       </p>
       <p class="form-group">
         <label for="telephone">Téléphone :</label>
-        <input type="text" class="form-control" id="telephone" name="telephone" placeholder="Ex : 0512149876">
+        <input type="text" class="form-control" id="telephone" name="telephone">
       </p>
       <p><span style="color: red;"><?php if(isset($_SESSION['erreur'])) echo $_SESSION['erreur']; ?></span></p>
       <button type="submit" name="action" value="Email" class="btn btn-default">S'inscrire</button>
